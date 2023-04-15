@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body */
+#body {
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #4b392b;
+    min-height: 15vh;
+}
+
+#logo {
+    width: 5rem;
+    height: 5rem;
+}
+
+/* Footer */
+footer a {
+    color: white;
+}
+footer {
+    background-color: #4b392b;
+    font-size: 16px;
+    min-height: 25vh;
+    color: white;
+    margin-top: 20px;
+    padding-top: 50px;
+}
+footer a {
+    text-decoration: none;
+}
+.footer-menu {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+}
+.contactoINFO {
+    margin-top: 10px;
+    padding-left: 0;
+}
+.contactoLINK {
+    list-style: none;
+}
+.itemCONTACTO {
+    position: relative;
+    padding-left: 30px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+.paymentLOGO img {
+    width: 10%;
+    max-height: 90px;
+    margin: 0px;
+    padding: 10px;
+}
+.elementosEnFooter {
+    font-size: 0.8em;
+}
+.divisor {
+    margin-top: 20px;
+    clear: both;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+}
+.footerSecundario {
+    background-color: black;
+    width: 100%;
+}
