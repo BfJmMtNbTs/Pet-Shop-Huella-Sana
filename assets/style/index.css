@@ -87,8 +87,13 @@ main {
 }
 
 @media only screen and (max-width: 767px) {
-    .texto-1 {
+    .texto-index {
         color: #efefed;
+        font-weight: 750;
+        font-size: x-large;
+    }
+    .texto1-index {
+        color: #a7d723;
         font-weight: 750;
         font-size: x-large;
     }
