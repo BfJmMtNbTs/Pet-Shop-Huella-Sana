@@ -2,7 +2,7 @@
 .presentacion {
     width: 100%;
     height: 100vh;
-    user-select: none
+    user-select: none;
 }
 
 .video-contenedor {
@@ -84,6 +84,15 @@ main {
     color: #a7d723;
     font-weight: 750;
     font-size: xxx-large;
+}
+
+::-webkit-scrollbar {
+    background-color: #1397cf;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a7d723;
 }
 
 @media only screen and (max-width: 767px) {

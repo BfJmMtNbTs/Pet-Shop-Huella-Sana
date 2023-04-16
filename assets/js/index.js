@@ -7,10 +7,10 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
         console.error(error);
     });
 
-document.querySelector(".presentacion").addEventListener("wheel", function () {
+/* document.querySelector(".presentacion").addEventListener("wheel", function () {
     window.scrollTo({
         top: document.querySelector("#body").offsetTop,
         behavior: "smooth",
     });
     document.querySelector(".presentacion").style.display = "none";
-});
+}); */
