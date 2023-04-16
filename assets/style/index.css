@@ -2,7 +2,7 @@
 .presentacion {
     width: 100%;
     height: 100vh;
-    user-select: none
+    user-select: none;
 }
 
 .video-contenedor {
@@ -61,35 +61,124 @@
 main {
     background-color: #efefed;
 }
-
-#mapa {
-    width: 50vw;
+.columna {
+    display: flex;
+    flex-direction: row;
 }
 
-.img-index {
-    filter: brightness(50%);
+.imagen-e1 {
+    min-height: 50vh;
+    background-color: #e2e2e2;
+    position: relative;
+    background-image: url("../content/recurso2.png");
+    background-size: cover;
+    background-position: bottom;
 }
 
-.texto-index {
-    color: #efefed;
+.imagen-e1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    );
+    filter: brightness(
+        75%
+    );
+}
+
+.texto-e1 {
+    color: white;
     font-weight: 750;
     font-size: xxx-large;
+    position: relative;
+    z-index: 1;
 }
 
-.img1-index {
-    height: 50vh;
+.imagen-e2 {
+    min-height: 50vh;
+    background-color: #e2e2e2;
+    position: relative;
+    background-image: url("../content/recurso1.jpg");
+    background-size: cover;
+    background-position: bottom;
 }
 
-.texto1-index {
+.imagen-e2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    );
+    filter: brightness(
+        75%
+    );
+}
+
+.texto-e2 {
     color: #a7d723;
     font-weight: 750;
     font-size: xxx-large;
+    position: relative;
+    z-index: 1;
+}
+
+.boton-presentacion {
+    z-index: 2;
+}
+
+.cuadro {
+    min-height: 25rem;
+    background-color: #e2e2e2;
+}
+
+.cuadro1 {
+    min-height: 25rem;
+    background-color: #e2e2e2;
+    background-image: url("../content/recurso3.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.cuadro2 {
+    min-height: 25rem;
+    background-color: #e2e2e2;
+    background-image: url("../content/recurso4.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.mapa {
+    min-height: 30vh;
+    background-color: #e2e2e2;
 }
 
 @media only screen and (max-width: 767px) {
-    .texto-1 {
+    .texto-index {
         color: #efefed;
         font-weight: 750;
         font-size: x-large;
+    }
+    .texto1-index {
+        color: #a7d723;
+        font-weight: 750;
+        font-size: x-large;
+    }
+    .columna {
+        display: flex;
+        flex-direction: column;
     }
 }
