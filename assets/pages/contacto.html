@@ -16,7 +16,7 @@
     </head>
     <body id="body-cont">
         <div class="container col-sm-6 col-md-6 col-lg-6">
-            <div class="contact-form">
+            <div class="contact-form" id="div-form">
                 <span class="heading">¡Contactanos!</span>
                 <div class="accordion" id="mi-acordeon">
                     <div class="accordion-item">
@@ -43,26 +43,26 @@
                                     <label for="name"
                                         >Nombre Propietario:</label
                                     >
-                                    <input type="text" required="" />
+                                    <input type="text"  />
                                     <label for="name"
                                         >Apellido Propietario:</label
                                     >
-                                    <input type="text" required="" />
+                                    <input type="text"  />
                                     <label for="name">Telefono:</label>
-                                    <input type="tel" required="" />
+                                    <input type="tel"  />
                                     <label for="email">Email:</label>
                                     <input
                                         type="email"
                                         id="email"
                                         name="email"
-                                        required=""
                                     />
                                     <label for="message1">Comentario:</label>
                                     <textarea
                                         id="message1"
                                         name="messageP"
-                                        required=""
                                     ></textarea>
+                                    <div id="liveAlertPlaceholder1"></div>
+                                    <button type="button" class="btn btn-primary" id="liveAlertBtn1">Enviar</button>
                                 </form>
                             </div>
                         </div>
@@ -90,13 +90,12 @@
                             <div class="accordion-body">
                                 <form>
                                     <label for="name">Nombre Mascota:</label>
-                                    <input type="text" required="" />
+                                    <input type="text"  />
                                     <label for="email">Edad Mascota:</label>
                                     <input
                                         type="email"
                                         id="email"
                                         name="email"
-                                        required=""
                                     />
                                     <select
                                         class="form-select"
@@ -112,19 +111,19 @@
                                         <option value="4">Otro</option>
                                     </select>
                                     <label for="name">Raza:</label>
-                                    <input type="text" required="" />
+                                    <input type="text"  />
                                     <label for="message2">Comentario:</label>
                                     <textarea
                                         id="message2"
                                         name="messageM"
-                                        required=""
                                     ></textarea>
+                                    <div id="liveAlertPlaceholder2"></div>
+                                    <button type="button" class="btn btn-primary" id="liveAlertBtn2">Enviar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="my-1">Enviar</button>
             </div>
         </div>
         <script
@@ -132,5 +131,6 @@
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
             crossorigin="anonymous"
         ></script>
+        <script src="../js/contacto.js"></script>
     </body>
 </html>
