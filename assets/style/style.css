@@ -3,10 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /* Body */
-#body {
+body{
     min-height: 100vh;
-}
+} 
 
 /* Header */
 header {
@@ -19,8 +20,15 @@ header {
     height: 5rem;
 }
 
+/* Main */
+main {
+    background-color: #efefed;
+    min-height: 60vh;
+
+}
+
 /* Footer */
-footer a {
+footer a{
     color: white;
 }
 footer {
@@ -28,45 +36,41 @@ footer {
     font-size: 16px;
     min-height: 25vh;
     color: white;
-    margin-top: 20px;
+    margin-top: auto;
     padding-top: 50px;
 }
-footer a {
+footer a{
     text-decoration: none;
 }
-.footer-menu {
+.footer-menu{
     margin: 0 0 40px;
     padding: 0;
     list-style: none;
 }
-.contactoINFO {
+.contactoINFO{
     margin-top: 10px;
     padding-left: 0;
 }
-.contactoLINK {
-    list-style: none;
+.contactoLINK{
+  list-style: none;
 }
-.itemCONTACTO {
+.itemCONTACTO{
     position: relative;
     padding-left: 30px;
     list-style: none;
     margin-bottom: 20px;
 }
-.paymentLOGO img {
+.paymentLOGO img{
     width: 10%;
     max-height: 90px;
     margin: 0px;
     padding: 10px;
 }
-.elementosEnFooter {
+.elementosEnFooter{
     font-size: 0.8em;
 }
-.divisor {
+.divisor{
     margin-top: 20px;
     clear: both;
     border-bottom: 1px solid rgba(44, 62, 80, 0.1);
-}
-.footerSecundario {
-    background-color: black;
-    width: 100%;
 }
