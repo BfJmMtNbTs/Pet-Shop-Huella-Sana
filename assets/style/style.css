@@ -3,6 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Barra de scroll */
+::-webkit-scrollbar {
+    background-color: #1397cf;
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a7d723;
+}
+
 /* Body */
 #body {
     min-height: 100vh;

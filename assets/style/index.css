@@ -61,20 +61,21 @@
 main {
     background-color: #efefed;
 }
-
-#mapa {
-    width: 50vw;
+.columna {
+    display: flex;
+    flex-direction: row;
 }
 
-.i-e1 {
+.imagen-e1 {
     min-height: 50vh;
+    background-color: #e2e2e2;
     position: relative;
     background-image: url("../content/recurso2.png");
     background-size: cover;
-    background-position: center center;
+    background-position: bottom;
 }
 
-.i-e1::after {
+.imagen-e1::after {
     content: "";
     position: absolute;
     top: 0;
@@ -92,7 +93,7 @@ main {
     );
 }
 
-.t-e1 {
+.texto-e1 {
     color: white;
     font-weight: 750;
     font-size: xxx-large;
@@ -100,15 +101,16 @@ main {
     z-index: 1;
 }
 
-.i-e2 {
+.imagen-e2 {
     min-height: 50vh;
+    background-color: #e2e2e2;
     position: relative;
     background-image: url("../content/recurso1.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: bottom;
 }
 
-.i-e2::after {
+.imagen-e2::after {
     content: "";
     position: absolute;
     top: 0;
@@ -126,7 +128,7 @@ main {
     );
 }
 
-.t-e2 {
+.texto-e2 {
     color: #a7d723;
     font-weight: 750;
     font-size: xxx-large;
@@ -134,13 +136,34 @@ main {
     z-index: 1;
 }
 
-::-webkit-scrollbar {
-    background-color: #1397cf;
-    width: 6px;
+.boton-presentacion {
+    z-index: 2;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #a7d723;
+.cuadro {
+    min-height: 25rem;
+    background-color: #e2e2e2;
+}
+
+.cuadro1 {
+    min-height: 25rem;
+    background-color: #e2e2e2;
+    background-image: url("../content/recurso3.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.cuadro2 {
+    min-height: 25rem;
+    background-color: #e2e2e2;
+    background-image: url("../content/recurso4.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.mapa {
+    min-height: 30vh;
+    background-color: #e2e2e2;
 }
 
 @media only screen and (max-width: 767px) {
@@ -153,5 +176,9 @@ main {
         color: #a7d723;
         font-weight: 750;
         font-size: x-large;
+    }
+    .columna {
+        display: flex;
+        flex-direction: column;
     }
 }
