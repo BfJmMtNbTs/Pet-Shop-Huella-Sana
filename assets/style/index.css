@@ -66,24 +66,72 @@ main {
     width: 50vw;
 }
 
-.img-index {
-    filter: brightness(50%);
+.i-e1 {
+    min-height: 50vh;
+    position: relative;
+    background-image: url("../content/recurso2.png");
+    background-size: cover;
+    background-position: center center;
 }
 
-.texto-index {
-    color: #efefed;
+.i-e1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    );
+    filter: brightness(
+        75%
+    );
+}
+
+.t-e1 {
+    color: white;
     font-weight: 750;
     font-size: xxx-large;
+    position: relative;
+    z-index: 1;
 }
 
-.img1-index {
-    height: 50vh;
+.i-e2 {
+    min-height: 50vh;
+    position: relative;
+    background-image: url("../content/recurso1.jpg");
+    background-size: cover;
+    background-position: center center;
 }
 
-.texto1-index {
+.i-e2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    );
+    filter: brightness(
+        75%
+    );
+}
+
+.t-e2 {
     color: #a7d723;
     font-weight: 750;
     font-size: xxx-large;
+    position: relative;
+    z-index: 1;
 }
 
 ::-webkit-scrollbar {
