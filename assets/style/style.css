@@ -15,7 +15,7 @@
 }
 
 /* Body */
-#body {
+body {
     min-height: 100vh;
 }
 
@@ -30,6 +30,12 @@ header {
     height: 5rem;
 }
 
+/* Main */
+main {
+    background-color: #efefed;
+    min-height: 60vh;
+}
+
 /* Footer */
 footer a {
     color: white;
@@ -39,6 +45,7 @@ footer {
     font-size: 16px;
     min-height: 25vh;
     color: white;
+    margin-top: auto;
     padding-top: 50px;
 }
 footer a {
@@ -75,8 +82,4 @@ footer a {
     margin-top: 20px;
     clear: both;
     border-bottom: 1px solid rgba(44, 62, 80, 0.1);
-}
-.footerSecundario {
-    background-color: black;
-    width: 100%;
 }

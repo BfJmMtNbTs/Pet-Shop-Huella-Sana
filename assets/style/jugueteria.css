@@ -1,0 +1,115 @@
+.carta-producto {
+    margin: 1rem;
+    width: 15rem;
+    height: 22rem;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    overflow: visible;
+   }
+   .carta-producto:hover{
+    cursor: pointer;
+    box-shadow: 0 15px 0px #a7d723;
+   }
+   
+   .card-img {
+    background-color: transparent;
+    background-image: url(https://i.postimg.cc/qM3FKSRS/huesos-perros.jpg);  
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10rem;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .7s ease;
+   }
+   
+   .card-info {
+    padding-top: 10%;
+   }
+   
+  .svg-icon-carrito {
+    width: 50px;
+  
+   }
+   #carrito{
+    fill:#38271a;
+  }
+  
+   .card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 3px solid #1397cf;
+    color: #4b392b;
+   }
+   
+   /*Text*/
+   .titulo {
+    display: flex;
+    justify-content: center;
+   }
+  
+   .text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #4b392b;
+   }
+   
+   .text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+   }
+   
+   /*Button*/
+   .card-button {
+    background-color: #ededed;
+    display: flex; 
+    justify-content: center;
+    height: 2rem;
+    width: 4rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: .1s ease-in-out;
+   }
+  
+   /*Hover*/
+   .card-img:hover {
+    transform: translateY(-1%);
+    filter: drop-shadow(5px 5px 5px #435ea773);
+   }
+   .card-button:hover {
+    border: 3px solid #a7d723;
+   }
+  
+   /* BOTON FAV ---------------------*/
+  .btn-fav {
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    right: 0px;
+  }
+  
+  .icon {
+    width: 35px;
+  
+  }
+  
+  .icon path {
+    fill: rgb(176, 176, 176);
+    transition: .1s linear;
+  }
+  
+  .btn-fav:hover > .icon path {
+    fill: rgb(255, 0, 0);
+  }
+  
