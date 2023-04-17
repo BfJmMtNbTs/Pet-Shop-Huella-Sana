@@ -52,9 +52,12 @@ main {
 footer a {
     color: white;
 }
+.imagenesFooter{
+    filter: drop-shadow(black 5px 5px 1px);
+}
 
 footer {
-    background-color: #4b392b;
+    background-color: #342418;
     font-size: 16px;
     min-height: 25vh;
     color: white;
@@ -78,7 +81,6 @@ footer a {
 }
 .itemCONTACTO {
     position: relative;
-    padding-left: 30px;
     list-style: none;
     margin-bottom: 20px;
 }
@@ -86,7 +88,6 @@ footer a {
     width: 10%;
     max-height: 90px;
     margin: 0px;
-    padding: 10px;
 }
 .elementosEnFooter {
     font-size: 0.8em;
