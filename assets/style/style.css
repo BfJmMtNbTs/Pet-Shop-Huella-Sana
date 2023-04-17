@@ -97,6 +97,10 @@ footer a {
     clear: both;
     border-bottom: 1px solid rgba(44, 62, 80, 0.1);
 }
-.footerSecundario {
-    background-color: #a7d723;
+@media only screen and (max-width: 767px) {
+    .centerfooter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
