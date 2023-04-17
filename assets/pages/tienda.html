@@ -1,189 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="../style/jugueteria.css">
-  <link rel="stylesheet" href="../style/style.css">
-  <title>Pet Shop | Tienda</title>
-</head>
-
-<body class="contenedorBody">
-  <nav class="navbar navar d-flex justify-content-between">
-    <a href="#"><img id="logopatitanav" src="../content/patitah.png" alt="logoPatita"></a>
-    <form class="d-flex col-7 justify-content-center" role="search">
-      <input id="buscador" class="input buscador form-control" type="search" placeholder="¿Que andas buscando?"
-        aria-label="Search">
-    </form>
-    <div>
-      <div class="card-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-        aria-controls="offcanvasWithBothOptions">
-        <svg class="svg-icon-carrito" viewBox="0 0 20 20">
-          <path
-            d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-          </path>
-          <path
-            d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-          </path>
-          <path
-            d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-          </path>
-        </svg>
-      </div>
-      <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de compra</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <p>Agregue productos al carrito</p>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main>
-    <section class="container justify-content-center d-flex flex-wrap">
-
-      <div class="carta-producto d-flex flex-column justify-content-between">
-        <button class="btn-fav">
-          <svg viewBox="0 0 17.503 15.625" height="20.625" width="20.503" xmlns="http://www.w3.org/2000/svg"
-            class="icon">
-            <path transform="translate(0 0)"
-              d="M8.752,15.625h0L1.383,8.162a4.824,4.824,0,0,1,0-6.762,4.679,4.679,0,0,1,6.674,0l.694.7.694-.7a4.678,4.678,0,0,1,6.675,0,4.825,4.825,0,0,1,0,6.762L8.752,15.624ZM4.72,1.25A3.442,3.442,0,0,0,2.277,2.275a3.562,3.562,0,0,0,0,5l6.475,6.556,6.475-6.556a3.563,3.563,0,0,0,0-5A3.443,3.443,0,0,0,12.786,1.25h-.01a3.415,3.415,0,0,0-2.443,1.038L8.752,3.9,7.164,2.275A3.442,3.442,0,0,0,4.72,1.25Z"
-              id="Fill"></path>
-          </svg>
-        </button>
-        <div class="imagen-tarjeta d-flex justify-content-center">
-          <img src="https://i.postimg.cc/qM3FKSRS/huesos-perros.jpg" alt="">
-        </div>
-        <div class="contenedor-info">
-          <div class="card-info">
-            <p class="text-title">Product titleaaaaaaaaaaaaasd</p>
-          </div>
-          <div class="contenedor-pie-carta d-flex flex-column justify-content-between">
-            <div class="card-footer d-flex flex-column justify-content-between">
-              <span class="text-title">$499.49</span>
-            </div>
-            <div class="d-flex justify-content-between">
-              <div class="card-button">
-                <svg class="svg-icon-carrito" viewBox="0 0 20 20">
-                  <path
-                    d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                  </path>
-                  <path
-                    d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                  </path>
-                  <path
-                    d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                  </path>
-                </svg>
-              </div>
-              <div class="infocantidad">
-                <p class="cantidad">Disponibles:</p>
-                <p id="numcant" class="cantidad">44</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="carta-producto d-flex flex-column justify-content-between">
-        <button class="btn-fav">
-          <svg viewBox="0 0 17.503 15.625" height="20.625" width="20.503" xmlns="http://www.w3.org/2000/svg"
-            class="icon">
-            <path transform="translate(0 0)"
-              d="M8.752,15.625h0L1.383,8.162a4.824,4.824,0,0,1,0-6.762,4.679,4.679,0,0,1,6.674,0l.694.7.694-.7a4.678,4.678,0,0,1,6.675,0,4.825,4.825,0,0,1,0,6.762L8.752,15.624ZM4.72,1.25A3.442,3.442,0,0,0,2.277,2.275a3.562,3.562,0,0,0,0,5l6.475,6.556,6.475-6.556a3.563,3.563,0,0,0,0-5A3.443,3.443,0,0,0,12.786,1.25h-.01a3.415,3.415,0,0,0-2.443,1.038L8.752,3.9,7.164,2.275A3.442,3.442,0,0,0,4.72,1.25Z"
-              id="Fill"></path>
-          </svg>
-        </button>
-        <div class="imagen-tarjeta d-flex justify-content-center">
-          <img src="https://i.postimg.cc/qM3FKSRS/huesos-perros.jpg" alt="">
-        </div>
-        <div class="contenedor-info">
-          <div class="card-info">
-            <p class="text-title">Product title</p>
-          </div>
-          <div class="contenedor-pie-carta d-flex flex-column justify-content-between">
-            <div class="card-footer d-flex flex-column justify-content-between">
-              <span class="text-title">$499.49</span>
-            </div>
-            <div class="d-flex justify-content-between">
-              <div class="card-button">
-                <svg class="svg-icon-carrito" viewBox="0 0 20 20">
-                  <path
-                    d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                  </path>
-                  <path
-                    d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                  </path>
-                  <path
-                    d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                  </path>
-                </svg>
-              </div>
-              <div class="infocantidad">
-                <p class="cantidad">Disponibles:</p>
-                <p id="numcant" class="cantidad">44</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"></script>
-  <script src="../js/jugueteria.js"></script>
-=======
+    <meta charset="UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/jugueteria.css">
+    <link rel="stylesheet" href="../style/tienda.css">
     <link rel="stylesheet" href="../style/style.css">
-    <title>Pet Shop | Jugueteria</title>
+    <link rel="shortcut icon" href="../content/favicon.png" type="image/x-icon" />
+    <title>Pet Shop | Tienda</title>
 </head>
 
 <body class="contenedorBody">
     <nav class="navbar navar d-flex justify-content-between">
-        <img id="logopatitanav" src="../content/patitah.png" alt="logoPatita">
+        <a href="#"><img id="logopatitanav" src="../content/patitah.png" alt="logoPatita"></a>
         <form class="d-flex col-7 justify-content-center" role="search">
             <input id="buscador" class="input buscador form-control" type="search" placeholder="¿Que andas buscando?"
                 aria-label="Search">
         </form>
-        <img id="logopatitanav" src="../content/patitah.png" alt="logoPatita">
+        <div>
+            <div class="card-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions">
+                <svg class="svg-icon-carrito" viewBox="0 0 20 20">
+                    <path
+                        d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                    </path>
+                    <path
+                        d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                    </path>
+                    <path
+                        d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                    </path>
+                </svg>
+            </div>
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Agregue productos al carrito</p>
+                </div>
+            </div>
         </div>
     </nav>
-    <main class="container">
-        <div class="row m-4">
-            <div class="row m-4 d-flex justify-content-center" id="contenedor-tarjetas">
-
+    <main>
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row my-3 gap d-flex justify-content-center" id="contenedor-tarjetas">
+                <!-- Aqui van los productos -->
             </div>
         </div>
     </main>
-    <footer class="text-center">
+    <footer class="text-start">
         <div class="container-fluid px-md-5">
             <div class="row elementosEnFooter">
-                <div class="col-4">
+                <div class="col">
                     <ul class="footer-menu">
-                        <li class="footer-menu"><a href="">Termino y condiciones</a></li>
-                        <li class="footer-menu"><a href="">Politica de privacidad</a></li>
-                        <li class="footer-menu"><a href="">Politica en devoluciones y cambios</a></li>
-                        <li class="footer-menu"><a href="">Politica en devoluciones y cambios</a></li>
+                        <li class="footer-menu">
+                            <!-- a href="#"> -->Termino y condiciones</a>
+                        </li>
+                        <li class="footer-menu">
+                            <!--   <a href="#"> -->Politica de privacidad</a>
+                        </li>
+                        <li class="footer-menu">
+                            <!-- <a href="#" -->
+                            Politica en devoluciones y cambios</a>
+                        </li>
+                        <li class="footer-menu">
+                            <!-- <a href="#" > -->
+                            Preguntas frecuentes</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-4">
-                    <h3>Contactanos</h3>
+                <div class="col-md mb-4 text center">
+                    <h3>Contacto</h3>
                     <ul class="contactoINFO">
                         <li class="itemCONTACTO">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -191,7 +85,7 @@
                                 <path
                                     d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
                             </svg>
-                            <a href="">351637737</a>
+                            <a href="https://web.whatsapp.com/">351637737</a>
                         </li>
                         <li class="itemCONTACTO">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -199,7 +93,7 @@
                                 <path
                                     d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zm10.762.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z" />
                             </svg>
-                            <a class="contactoLINK" href="">llamada solo telefono</a>
+                            <a class="contactoLINK">Llamada solo telefono</a>
                         </li>
                         <li class="itemCONTACTO">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -209,7 +103,7 @@
                                 <path
                                     d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z" />
                             </svg>
-                            <a class="contactoLINK" href="">EMAIL</a>
+                            <a class="contactoLINK" href="mailto: huellafelices@gmail.com">Huellafelices@gmail.com</a>
                         </li>
                         <li class="itemCONTACTO">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -218,21 +112,22 @@
                                     d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
                                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                             </svg>
-                            UBICACION
+                            <a
+                                href="https://www.google.com/maps?ll=-24.237543,-65.260722&z=15&t=m&hl=es-419&gl=AR&mapclient=embed&cid=6319165887213111271">Mascotti</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-4">
+                <div class="col-md mb-4">
                     <h3>!Novedades y beneficios en nustras redes!</h3>
-                    <a href="https://www.instagram.com/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    <a href="https://www.instagram.com/" class="p-1">
+                        <svg xmlns="http://www.w3.org/2000/svg " width="40" height="60" fill="currentColor"
                             class="bi bi-instagram" viewBox="0 0 16 16">
                             <path
                                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
                         </svg>
                     </a>
                     <a href="https://www.facebook.com/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" fill="currentColor"
                             class="bi bi-facebook" viewBox="0 0 16 16">
                             <path
                                 d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
@@ -240,19 +135,22 @@
                     </a>
                 </div>
             </div>
-            <div class="divisor"></div>
-            <div class="row">
+            <div class="divisor mb-5"></div>
+            <div class="row mb-5">
                 <div class="col-md-9">
                     <div class="paymentLOGO">
-                        <div class="row mb-4 d-flex justify-content-end">
-                            <div class="col-md-8 d-flex justify-content-center">
-                                <img class="imagenesFooter" src="../content/visa@2x.png" alt="">
-                                <img class="imagenesFooter" src="../content/amex@2x.png" alt="">
-                                <img class="imagenesFooter" src="../content/mastercard@2x.png" alt="">
-                                <img class="imagenesFooter" src="../content/masterpass.png" alt="">
-                                <img class="imagenesFooter" src="../content/jcb@2x.png" alt="">
-                                <img class="imagenesFooter" src="../content/amex@2x.png" alt="">
-                                <img class="imagenesFooter" src="../content/paysafecard@2x.png" alt="">
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <h3>Medios de pago</h3>
+                            </div>
+                            <div class="col-md-8">
+                                <img class="imagenesFooter" src="./assets/content/visa@2x.png" alt="" />
+                                <img class="imagenesFooter" src="./assets/content/paypal@2x.png" alt="" />
+                                <img class="imagenesFooter" src="./assets/content/mastercard@2x.png" alt="" />
+                                <img class="imagenesFooter" src="./assets/content/masterpass.png" alt="" />
+                                <img class="imagenesFooter" src="./assets/content/jcb@2x.png" alt="" />
+                                <img class="imagenesFooter" src="./assets/content/amex@2x.png" alt="" />
+                                <img class="imagenesFooter" src="./assets/content/paysafecard@2x.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -260,15 +158,18 @@
             </div>
         </div>
         <div class="footerSecundario w-100">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-9 mb-3 mb-md-0">
+                    <div class="text-center">
                         <div class="d-inline-block">
-                            Copyright Cohort FS046 - 2023. Todos los derechos reservados.
+                            Copyright Cohort FS046 - 2023. Todos los
+                            derechos reservados.
                         </div>
                         <div class="d-md-inline-block mt-md-0 mt-3">
-                            Defensa al consumidor.Para reclamos dirigirse:
-                            <a class="font-weight-bold" href="https://autogestion.produccion.gob.ar/consumidores"></a>
+                            Defensa al consumidor.Para reclamos
+                            dirigirse:
+                            <a href="https://autogestion.produccion.gob.ar/consumidores" class="font-weight-bold">Click
+                                aqui</a>
                         </div>
                     </div>
                 </div>
@@ -280,4 +181,5 @@
         crossorigin="anonymous"></script>
     <script src="../js/jugueteria.js"></script>
 </body>
+
 </html>
