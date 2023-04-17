@@ -1,111 +1,102 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.navar {
-  background-color: #38271a;
-  box-shadow: #0000007a 1px 2px 4px;
-  height: 5rem;
-  padding: 1rem;
-}
-#logopatitanav {
-  height: 5vh;
-  margin-right: 14px;
-}
-.buscador {
-  background-color: #a7d723;
-  border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  font-style: italic;
-  height: 2.3rem;
-  outline-style: none;
-}
+
 /* Barra de scroll */
 ::-webkit-scrollbar {
-  background-color: #1397cf;
-  width: 13px;
+    background-color: #1397cf;
+    width: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a7d723;
-  border-radius: 9px;
+    background-color: #a7d723;
+    border-radius: 9px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #607e0c;
-  border-radius: 9px;
+    background-color: #607e0c;
+    border-radius: 9px;
 }
 
 /* Body */
 body {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
-/* Header */
-header {
-  background-color: #4b392b;
-  min-height: 15vh;
+/* Nav */
+.navar {
+    background-color: #38271a;
+    box-shadow: #0000007a 1px 2px 4px;
+    height: 5rem;
+    padding: 1rem;
 }
-
-#logo {
-  width: 5rem;
-  height: 5rem;
+#logopatitanav {
+    height: 3vh;
+}
+.buscador {
+    background-color: #a7d723;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-style: italic;
+    height: 2.3rem;
 }
 
 /* Main */
 main {
-  background-color: #e5e5e5;
-  min-height: 60vh;
+    background-color: #e5e5e5;
+    min-height: 60vh;
 }
 /* Footer */
 footer a {
-  color: white;
+    color: white;
+}
+.imagenesFooter{
+    filter: drop-shadow(black 5px 5px 1px);
 }
 
 footer {
-  background-color: #4b392b;
-  font-size: 16px;
-  min-height: 25vh;
-  color: white;
-  margin-top: auto;
-  padding-top: 50px;
+    background-color: #342418;
+    font-size: 16px;
+    min-height: 25vh;
+    color: white;
+    margin-top: auto;
+    padding-top: 50px;
 }
 footer a {
-  text-decoration: none;
+    text-decoration: none;
 }
 .footer-menu {
-  margin: 0 0 40px;
-  padding: 0;
-  list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
 }
 .contactoINFO {
-  margin-top: 10px;
-  padding-left: 0;
+    margin-top: 10px;
+    padding-left: 0;
 }
 .contactoLINK {
-  list-style: none;
+    list-style: none;
 }
 .itemCONTACTO {
-  position: relative;
-  padding-left: 30px;
-  list-style: none;
-  margin-bottom: 20px;
+    position: relative;
+    list-style: none;
+    margin-bottom: 20px;
 }
 .paymentLOGO img {
-  width: 10%;
-  max-height: 90px;
-  margin: 0px;
-  padding: 10px;
+    width: 10%;
+    max-height: 90px;
+    margin: 0px;
 }
 .elementosEnFooter {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
 .divisor {
-  margin-top: 20px;
-  clear: both;
-  border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+    margin-top: 20px;
+    clear: both;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
 }
 .footerSecundario {
-  background-color: #a7d723;
+    background-color: #a7d723;
 }
