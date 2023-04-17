@@ -43,6 +43,21 @@ body {
     height: 2.3rem;
 }
 
+.boton-carrito {
+    background-color: #ededed;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 3rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.1s ease-in-out;
+}
+
+.boton-carrito svg {
+    fill: #a7d723;
+}
+
 /* Main */
 main {
     background-color: #e5e5e5;
@@ -52,7 +67,7 @@ main {
 footer a {
     color: white;
 }
-.imagenesFooter{
+.imagenesFooter {
     filter: drop-shadow(black 5px 5px 1px);
 }
 
@@ -98,7 +113,7 @@ footer a {
     border-bottom: 1px solid rgba(44, 62, 80, 0.1);
 }
 @media only screen and (max-width: 767px) {
-    .centerfooter{
+    .centerfooter {
         display: flex;
         flex-direction: column;
         align-items: center;
