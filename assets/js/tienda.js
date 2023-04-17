@@ -38,6 +38,7 @@ function imprimirCards(productos) {
                 <div class="infocantidad">
                     <p class="cantidad">Disponibles:</p>
                     <p id="numcant" class="cantidad">${productosDisponibles}</p>
+                    <a href="../pages/detalles.html?id=${producto._id}">Ver</a>
                 </div>
             </div>
                 <div class="d-flex">
