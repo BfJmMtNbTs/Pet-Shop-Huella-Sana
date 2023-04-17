@@ -1,0 +1,14 @@
+.card-button {
+    background-color: #ededed;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 4rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.1s ease-in-out;
+}
+
+.card-button:hover {
+    border: 3px solid #a7d723;
+}
