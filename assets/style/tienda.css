@@ -1,3 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .infocantidad {
   height: 3rem;
   display: flex;
@@ -20,7 +26,7 @@
 .carta-producto {
   margin: 1rem;
   width: 17rem;
-  height: 24rem;
+  height: 28rem;
   padding: 0.8em;
   background: #f5f5f5;
   position: relative;
@@ -36,11 +42,24 @@
   background-repeat: no-repeat;
   background-position: center;
   width: 70%;
-  height: 10.3rem;
+  height: 12rem;
   border-radius: 0.5rem;
   transition: 0.3s ease;
 }
-
+#ancla{
+  text-align: center;
+  color: black;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 1s;
+  height: 4vh;
+  width: 5vw;
+  border-radius: 4px;
+}
+#ancla:hover{
+  transition: 1s;
+  background-color: #94cf13;
+}
 .card-info {
   padding-top: 10%;
 }
@@ -54,7 +73,6 @@
 }
 
 .contenedor-info {
-  height: 15rem;
   padding: 15px;
 }
 
@@ -74,6 +92,7 @@
 }
 
 .text-title {
+  height: 3rem;
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5;
@@ -89,7 +108,7 @@
   background-color: #ededed;
   display: flex;
   justify-content: center;
-  height: 2rem;
+  height: 2.4rem;
   width: 4rem;
   cursor: pointer;
   border-radius: 12px;
