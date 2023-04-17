@@ -1,6 +1,3 @@
-let urlApi = "https://mindhub-xj03.onrender.com/api/petshop"
-let contenedorTarjeta = document.getElementById("contenedor-tarjetas")
-
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
     .then((data) => {
@@ -16,9 +13,9 @@ function imprimirCards(productos) {
     const cardsHTML = productos.map((producto) => {
         let productosDisponibles
         if (producto.disponibles < 5){
-            productosDisponibles = "Pocos";
+            productosDisponibles = "Pocas unidades";
         }else if (producto.disponibles == 0){
-            productosDisponibles = "Ninguno";
+            productosDisponibles = "No hay productos disponibles";
         }else{
             productosDisponibles = producto.disponibles
         }
