@@ -16,9 +16,9 @@ function imprimirCards(productos) {
     const cardsHTML = productos.map((producto) => {
         let productosDisponibles
         if (producto.disponibles < 5){
-            productosDisponibles = "Quedan pocas unidades";
+            productosDisponibles = "Pocos";
         }else if (producto.disponibles == 0){
-            productosDisponibles = "No hay productos disponibles";
+            productosDisponibles = "Ninguno";
         }else{
             productosDisponibles = producto.disponibles
         }

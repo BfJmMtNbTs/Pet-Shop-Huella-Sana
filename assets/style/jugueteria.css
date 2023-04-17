@@ -25,11 +25,9 @@
     overflow: visible;
 }
 .carta-producto:hover {
-    background-color: #e2f6ca;
-    cursor: pointer;
-    box-shadow: 0 15px 0px #a7d723;
+cursor: pointer;
+  box-shadow: 0px 10px 0px #a7d723;
 }
-
 .imagen-tarjeta img {
     background-repeat: no-repeat;
     background-position: center;
@@ -95,8 +93,8 @@
     transform: translateY(-2%);
 }
 .card-button:hover {
-    border: 3px solid #7eab03;
-    background-color: #a7d723;
+border: 3px solid #527000;
+  background-color: #a7d723;
 }
 
 /* BOTON FAV ---------------------*/
