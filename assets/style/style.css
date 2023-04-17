@@ -7,11 +7,16 @@
 /* Barra de scroll */
 ::-webkit-scrollbar {
     background-color: #1397cf;
-    width: 6px;
+    width: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #a7d723;
+    border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #607e0c;
+    border-radius: 9px;
 }
 
 /* Body */
@@ -19,23 +24,30 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
-header {
-    background-color: #4b392b;
-    min-height: 15vh;
-}
-
-#logo {
-    width: 5rem;
+/* Nav */
+.navar {
+    background-color: #38271a;
+    box-shadow: #0000007a 1px 2px 4px;
     height: 5rem;
+    padding: 1rem;
+}
+#logopatitanav {
+    height: 3vh;
+}
+.buscador {
+    background-color: #a7d723;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-style: italic;
+    height: 2.3rem;
 }
 
 /* Main */
 main {
-    background-color: #efefed;
+    background-color: #e5e5e5;
     min-height: 60vh;
 }
-
 /* Footer */
 footer a {
     color: white;
@@ -43,6 +55,7 @@ footer a {
 .imagenesFooter{
     filter: drop-shadow(black 5px 5px 1px);
 }
+
 footer {
     background-color: #342418;
     font-size: 16px;
@@ -83,4 +96,7 @@ footer a {
     margin-top: 20px;
     clear: both;
     border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+}
+.footerSecundario {
+    background-color: #a7d723;
 }
