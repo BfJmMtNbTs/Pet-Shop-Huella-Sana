@@ -11,13 +11,48 @@
 /* Header */
 header {
     background-color: #4b392b;
-    min-height: 15vh;
+    min-height: 10vh;
 }
 
 #logo {
     width: 5rem;
     height: 5rem;
 }
+
+/* Nav */
+
+.navbar{
+    background-color: rgb(249, 205, 6) !important;
+    height: 10vh;
+    }
+.nav-link{
+    color: white;
+    font-size: 24px;
+    font: 700;
+    padding: 20px;
+    }   
+.activ{
+    color: white;
+    font-size: 24px;
+    font: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+.logo{
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Footer */
 footer a {
