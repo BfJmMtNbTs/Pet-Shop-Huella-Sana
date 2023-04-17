@@ -51,7 +51,7 @@ textarea {
     transition: transform 0.3s ease-in-out;
 }
 
-.contact-form button[type="submit"] {
+#liveAlertBtn1, #liveAlertBtn2 {
     background-color: #ff6384;
     color: #fff;
     border: none;
@@ -61,8 +61,8 @@ textarea {
     cursor: pointer;
 }
 
-.contact-form button[type="submit"]:hover {
-    transform: scale(1.1);
+#liveAlertBtn1:hover, #liveAlertBtn2:hover {
+    transform: scale(1.04);
     transition: transform 0.3s ease-in-out;
 }
 
