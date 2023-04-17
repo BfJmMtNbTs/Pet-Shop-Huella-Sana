@@ -139,25 +139,65 @@ main {
     z-index: 2;
 }
 
-.cuadro {
-    min-height: 25rem;
+.imagen-e3 {
+    min-height: 50vh;
     background-color: #e2e2e2;
-}
-
-.cuadro1 {
-    min-height: 25rem;
-    background-color: #e2e2e2;
+    position: relative;
     background-image: url("../content/recurso3.jpg");
     background-size: cover;
     background-position: bottom;
 }
 
-.cuadro2 {
-    min-height: 25rem;
+.imagen-e3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    );
+    filter: brightness(
+        50%
+    );
+}
+
+.imagen-e4 {
+    min-height: 50vh;
     background-color: #e2e2e2;
+    position: relative;
     background-image: url("../content/recurso4.jpg");
     background-size: cover;
     background-position: bottom;
+}
+
+.imagen-e4::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    );
+    filter: brightness(
+        50%
+    );
+}
+
+.texto-e3 {
+    color: white;
+    font-weight: 750;
+    position: relative;
+    z-index: 1;
 }
 
 .mapa {
