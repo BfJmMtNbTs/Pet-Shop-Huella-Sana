@@ -1,0 +1,16 @@
+.list-group-item{
+    margin: 10px;
+    padding: 0;
+}
+.card-text{
+    margin: 10px;
+}
+.card-title{
+    margin: 10px;
+}
+.card{
+    width: 60%;
+}
+span{
+    color: rgb(48, 5, 163);
+}
