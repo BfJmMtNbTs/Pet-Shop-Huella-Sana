@@ -17,7 +17,7 @@
     </head>
     <body>
         <nav class="navbar navar d-flex justify-content-between">
-            <a href="../../index.html"><img id="logopatitanav" src="../content/patitah.png" alt="logoPatita"></a>
+            <a href="../../index.html"><img id="logopatitanav" src="../content/Logos/Recurso 10.png" alt="logoPatita"></a>
             <form class="d-flex col-7 justify-content-center" role="search">
                 <input id="buscador" class="input buscador form-control" type="search" placeholder="¿Que andas buscando?"
                     aria-label="Search">
@@ -59,10 +59,10 @@
                 </div>
             </div>
         </nav>
-        <main id="body-cont">
-            <div class="container col-sm-6 col-md-6 col-lg-6">
-                <div class="contact-form bg-primary" id="div-form">
-                    <span class="heading">¡Contactanos!</span>
+        <main id="body-cont" class="d-flex justify-content-center align-items-center">
+            <div class="container col-sm-6 col-md-6 col-lg-6 ">
+                <div class="contact-form p-4 mb-5 mt-4" id="div-form">
+                    <span class="heading text-center">¡Contactanos!</span>
                     <div class="accordion" id="mi-acordeon">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="seccion1">
@@ -88,23 +88,28 @@
                                         <label for="name"
                                             >Nombre Propietario:</label
                                         >
-                                        <input type="text"  />
+                                        <input type="text"
+                                        placeholder="Nombre"  />
                                         <label for="name"
                                             >Apellido Propietario:</label
                                         >
-                                        <input type="text"  />
+                                        <input type="text"
+                                        placeholder="Apellido"  />
                                         <label for="name">Telefono:</label>
-                                        <input type="tel"  />
+                                        <input type="tel"
+                                        placeholder="Numero de Telefono"  />
                                         <label for="email">Email:</label>
                                         <input
                                             type="email"
                                             id="email"
                                             name="email"
+                                            placeholder="Correo electronico"
                                         />
                                         <label for="message1">Comentario:</label>
                                         <textarea
                                             id="message1"
                                             name="messageP"
+                                            placeholder="Agregue un comentario"
                                         ></textarea>
                                         <div id="liveAlertPlaceholder1"></div>
                                         <button type="button" class="btn btn-primary" id="liveAlertBtn1">Enviar</button>
@@ -135,12 +140,14 @@
                                 <div class="accordion-body">
                                     <form>
                                         <label for="name">Nombre Mascota:</label>
-                                        <input type="text"  />
+                                        <input type="text"
+                                        placeholder="Nombre"  />
                                         <label for="email">Edad Mascota:</label>
                                         <input
                                             type="email"
                                             id="email"
                                             name="email"
+                                            placeholder="Edad"
                                         />
                                         <select
                                             class="form-select"
@@ -156,11 +163,12 @@
                                             <option value="4">Otro</option>
                                         </select>
                                         <label for="name">Raza:</label>
-                                        <input type="text"  />
+                                        <input type="text" placeholder="Nombre de la raza" />
                                         <label for="message2">Comentario:</label>
                                         <textarea
                                             id="message2"
                                             name="messageM"
+                                            placeholder="Agregue un comentario"
                                         ></textarea>
                                         <div id="liveAlertPlaceholder2"></div>
                                         <button type="button" class="btn btn-primary" id="liveAlertBtn2">Enviar</button>
@@ -306,7 +314,6 @@
                     </div>
                 </div>
             </div>
-
         </footer>
     </body>
 </html>
