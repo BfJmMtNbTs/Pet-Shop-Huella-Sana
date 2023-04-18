@@ -1,8 +1,9 @@
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-        imprimirCards(data);
+        const libreria = data;
+        const farmacia = libreria.filter(e=> e.categoria == "farmacia")
+        imprimirCards(farmacia);
     })
     .catch((error) => {
         console.error(error);
