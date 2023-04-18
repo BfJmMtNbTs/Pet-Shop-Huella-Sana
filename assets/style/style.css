@@ -42,6 +42,36 @@ body {
   height: 2.3rem;
 }
 
+.boton-carrito {
+    background-color: #ededed;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 3rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.1s ease-in-out;
+}
+
+.boton-carrito svg {
+    fill: #a7d723;
+}
+
+.boton-favoritos {
+    background-color: #ededed;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 3rem;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.1s ease-in-out;
+}
+
+.boton-favoritos svg {
+    fill: red;
+}
+
 /* Main */
 main {
   background-color: #e5e5e5;

@@ -21,19 +21,29 @@
             <input id="buscador" class="input buscador form-control" type="search" placeholder="¿Que andas buscando?"
                 aria-label="Search">
         </form>
+        <!-- <div>
+            <div class="boton-favoritos d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+            </svg>
+            </div>
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Lista de favoritos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Lista de favoritos vacia</p>
+                </div>
+            </div>
+        </div> -->
         <div>
-            <div class="card-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                aria-controls="offcanvasWithBothOptions">
-                <svg class="svg-icon-carrito" viewBox="0 0 20 20">
-                    <path
-                        d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
-                    </path>
-                    <path
-                        d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
-                    </path>
-                    <path
-                        d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
-                    </path>
+            <div class="boton-carrito d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
                 </svg>
             </div>
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
@@ -42,13 +52,35 @@
                     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de compra</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
-                    <p>Agregue productos al carrito</p>
+                <div class="offcanvas-body" id="contenedor-carrito-compra">
+                    <!-- <div class="d-flex bg-black">
+                        <img class="w-25" src="https://i.postimg.cc/s2v7QdfZ/collar-perros.png" alt="">
+                        <p class="text-light">Nombre del producto</p>
+                    </div> -->
                 </div>
             </div>
         </div>
     </nav>
     <main>
+        <div class="d-flex justify-content-end">
+            <select class="form-select text-center fs-5 aria-label="Default select example">
+                <option selected>Filtrar</option>
+                <option value="1">Precio de mayor a menor</option>
+                <option value="2">Precio de menor a mayor</option>
+                <option value="3">Orden alfabetico a Z</option>
+                <option value="4">-- Borrar filtros-- </option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-end">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="farmacia">
+                <label class="form-check-label fs-5" for="inlineCheckbox1">Farmacia</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="juguetes">
+                <label class="form-check-label fs-5" for="inlineCheckbox2">Jugeteria</label>
+            </div>
+        </div>
         <div class="container-fluid d-flex justify-content-center">
             <div class="row my-3 gap d-flex justify-content-center" id="contenedor-tarjetas">
                 <!-- Aqui van los productos -->
@@ -58,7 +90,7 @@
     <footer class="text-start">
         <div class="container-fluid px-md-5">
             <div class="row elementosEnFooter">
-                <div class="col">
+                <div class="col centerfooter">
                     <ul class="footer-menu">
                         <li class="footer-menu">
                             <!-- a href="#"> -->Termino y condiciones</a>
@@ -76,7 +108,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md mb-4 text center">
+                <div class="col-md mb-4 text center centerfooter">
                     <h3>Contacto</h3>
                     <ul class="contactoINFO">
                         <li class="itemCONTACTO">
@@ -117,8 +149,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md mb-4">
-                    <h3>¡Novedades y beneficios en nustras redes!</h3>
+                <div class="col-md mb-4 centerfooter">
+                    <h3>!Novedades y beneficios en nustras redes!</h3>
                     <a href="https://www.instagram.com/" class="p-1">
                         <svg xmlns="http://www.w3.org/2000/svg " width="40" height="60" fill="currentColor"
                             class="bi bi-instagram" viewBox="0 0 16 16">
@@ -140,17 +172,18 @@
                 <div class="col-md-9">
                     <div class="paymentLOGO">
                         <div class="row mb-4">
-                            <div class="col-md-4">
+                            <div class="col-md-4 centerfooter">
                                 <h3>Medios de pago</h3>
                             </div>
-                            <div class="col-md-8">
-                                <img class="imagenesFooter" src="./assets/content/visa@2x.png" alt="" />
-                                <img class="imagenesFooter" src="./assets/content/paypal@2x.png" alt="" />
-                                <img class="imagenesFooter" src="./assets/content/mastercard@2x.png" alt="" />
-                                <img class="imagenesFooter" src="./assets/content/masterpass.png" alt="" />
-                                <img class="imagenesFooter" src="./assets/content/jcb@2x.png" alt="" />
-                                <img class="imagenesFooter" src="./assets/content/amex@2x.png" alt="" />
-                                <img class="imagenesFooter" src="./assets/content/paysafecard@2x.png" alt="" />
+
+                            <div class="col-md-8 text-center">
+                                <img class="imagenesFooter" src="../content/visa@2x.png" alt="" />
+                                <img class="imagenesFooter" src="../content/paypal@2x.png" alt="" />
+                                <img class="imagenesFooter" src="../content/mastercard@2x.png" alt="" />
+                                <img class="imagenesFooter" src="../content/masterpass.png" alt="" />
+                                <img class="imagenesFooter" src="../content/jcb@2x.png" alt="" />
+                                <img class="imagenesFooter" src="../content/amex@2x.png" alt="" />
+                                <img class="imagenesFooter" src="../content/paysafecard@2x.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -160,12 +193,12 @@
         <div class="footerSecundario w-100">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="text-center">
+                    <div class="text-center p-2">
                         <div class="d-inline-block">
                             Copyright Cohort FS046 - 2023. Todos los
                             derechos reservados.
                         </div>
-                        <div class="d-md-inline-block mt-md-0 mt-3">
+                        <div class="d-md-inline-block mt-md-0 mt-3 ">
                             Defensa al consumidor.Para reclamos
                             dirigirse:
                             <a href="https://autogestion.produccion.gob.ar/consumidores" class="font-weight-bold">Click
@@ -175,6 +208,7 @@
                 </div>
             </div>
         </div>
+
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
