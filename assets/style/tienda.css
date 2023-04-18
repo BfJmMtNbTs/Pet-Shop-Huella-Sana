@@ -57,6 +57,23 @@
 
 .card-button1:hover {
   border: 3px solid red;
+  position: relative;
+}
+
+.card-button1:hover::before {
+  content: attr(title);
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
 
 .corazon-default {
@@ -98,6 +115,23 @@
 
 .card-button2:hover {
   border: 3px solid #1397cf;
+  position: relative;
+}
+
+.card-button2:hover::before {
+  content: attr(title);
+  background-color: #1397cf;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
 
 .card-button3 {
@@ -113,4 +147,21 @@
 
 .card-button3:hover {
   border: 3px solid #a7d723;
+  position: relative;
+}
+
+.card-button3:hover::before {
+  content: attr(title);
+  background-color: #a7d723;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
