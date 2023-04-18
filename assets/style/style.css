@@ -26,12 +26,12 @@ body {
 .navar {
   background-color: #38271a;
   box-shadow: #a7d723 0px 5px 0px;
-  height: 5rem;
+  min-height: 5rem;
   padding: 1rem;
   border-bottom: solid 3px #a7d723;
 }
 #logopatitanav {
-  height: 3rem;
+  height: 4rem;
 }
 .buscador {
   background-color: #a7d723;
