@@ -1,4 +1,4 @@
-#body-cont {
+body{
     background-color: #efefed;
 }
 
@@ -31,8 +31,7 @@
 
 textarea {
     resize: none;
-    height: 70px;
-    width: 200px;
+    height: 45px;
 }
 
 .contact-form input,
@@ -72,4 +71,15 @@ textarea {
 
 #form-select {
     margin-bottom: 1rem;
+}
+
+#div-form{
+    background-color: #ffffffaf;
+}
+
+#body-cont{
+    background-image: url(../content/fondoContacto.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
