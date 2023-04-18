@@ -1,34 +1,35 @@
-const select = document.querySelector('.form-select');
-const inlineCheckbox1 = document.getElementById("inlineCheckbox1")
-const inlineCheckbox2 = document.getElementById('inlineCheckbox2')
-const buscador = document.getElementById('buscador')
+const select = document.querySelector(".form-select");
+const inlineCheckbox1 = document.getElementById("inlineCheckbox1");
+const inlineCheckbox2 = document.getElementById("inlineCheckbox2");
+const buscador = document.getElementById("buscador");
 
-let filtroFarmacia
+let filtroFarmacia;
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
-.then((response) => response.json())
-.then((data) => {
-let libreria = data
-filtroFarmacia = libreria.filter(elemento=> elemento)
-console.log(filtroFarmacia)
-imprimirCards(libreria, "contenedor-tarjetas");
-})
-.catch((error) => {
-console.error(error);
-});
-
+    .then((response) => response.json())
+    .then((data) => {
+        let libreria = data;
+        filtroFarmacia = libreria.filter((elemento) => elemento);
+        console.log(filtroFarmacia);
+        imprimirCards(libreria, "contenedor-tarjetas");
+        botonDinamico(".card-button1",".corazon-default","corazon-rojo","borde-rojo");
+        botonDinamico(".card-button3",".carrito-default","carrito-verde","borde-verde");
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 
 function imprimirCards(productos, elemento) {
-    document.getElementById(elemento).innerHTML = ""
-        productos.map((producto) => {
-            let productosDisponibles
-            if (producto.disponibles < 5){
-                productosDisponibles = "Pocas unidades";
-            }else if (producto.disponibles == 0){
-                productosDisponibles = "No hay productos disponibles";
-            }else{
-                productosDisponibles = producto.disponibles
-            }
-            document.getElementById(elemento).innerHTML += `
+    document.getElementById(elemento).innerHTML = "";
+    productos.map((producto) => {
+        let productosDisponibles;
+        if (producto.disponibles < 5) {
+            productosDisponibles = "Pocas unidades";
+        } else if (producto.disponibles == 0) {
+            productosDisponibles = "No hay productos disponibles";
+        } else {
+            productosDisponibles = producto.disponibles;
+        }
+        document.getElementById(elemento).innerHTML += `
             <div class="producto">
                 <div class="imagen-tarjeta d-flex justify-content-center">
                 <img class="objet-fit-contain" src="${producto.imagen}" alt="">
@@ -59,21 +60,21 @@ function imprimirCards(productos, elemento) {
                 </div>
             </div>
             `;
-        });
+    });
 }
-inlineCheckbox1.addEventListener("change", ()=>{
+inlineCheckbox1.addEventListener("change", () => {
     aplicarFiltros();
 });
 
-inlineCheckbox2.addEventListener("change", ()=>{
+inlineCheckbox2.addEventListener("change", () => {
     aplicarFiltros();
 });
 
-select.addEventListener('change', function() {
+select.addEventListener("change", function () {
     aplicarFiltros();
 });
 
-buscador.addEventListener('input',()=>{
+buscador.addEventListener("input", () => {
     aplicarFiltros();
 });
 
@@ -81,11 +82,11 @@ function aplicarFiltros() {
     let resultados = [...filtroFarmacia];
 
     if (inlineCheckbox1.checked) {
-        resultados = resultados.filter(e => e.categoria == "farmacia");
+        resultados = resultados.filter((e) => e.categoria == "farmacia");
     }
 
     if (inlineCheckbox2.checked) {
-        resultados = resultados.filter(e => e.categoria == "jugueteria");
+        resultados = resultados.filter((e) => e.categoria == "jugueteria");
     }
 
     const selectedValue = select.value;
@@ -95,25 +96,42 @@ function aplicarFiltros() {
     } else if (selectedValue == 2) {
         resultados = resultados.sort((a, b) => a.precio - b.precio);
     } else if (selectedValue == 3) {
-        resultados = resultados.sort((a, b) => a.producto.localeCompare(b.producto));
+        resultados = resultados.sort((a, b) =>
+            a.producto.localeCompare(b.producto)
+        );
     }
 
     const textoBusqueda = buscador.value.toLowerCase();
 
     if (textoBusqueda) {
         resultados = resultados.filter((e) => {
-            return e.producto.toLowerCase().includes(textoBusqueda) || e.descripcion.toLowerCase().includes(textoBusqueda);
+            return (
+                e.producto.toLowerCase().includes(textoBusqueda) ||
+                e.descripcion.toLowerCase().includes(textoBusqueda)
+            );
         });
     }
     imprimirCards(resultados, "contenedor-tarjetas");
 }
 
-inlineCheckbox1.addEventListener("change", ()=>{
-        const categoriaFiltrados = filtroFarmacia.filter(e => e.categoria == "farmacia")
-        if (inlineCheckbox1.checked){
-            imprimirCards(categoriaFiltrados, "contenedor-tarjetas" )
-        }else{
-            imprimirCards(filtroFarmacia, "contenedor-tarjetas")
-        }
-        
-})
+inlineCheckbox1.addEventListener("change", () => {
+    const categoriaFiltrados = filtroFarmacia.filter(
+        (e) => e.categoria == "farmacia"
+    );
+    if (inlineCheckbox1.checked) {
+        imprimirCards(categoriaFiltrados, "contenedor-tarjetas");
+    } else {
+        imprimirCards(filtroFarmacia, "contenedor-tarjetas");
+    }
+});
+
+function botonDinamico(querySelectorAll1, querySelectorAll2, toggle1, toggle2) {
+    const botonesCarritos = document.querySelectorAll(querySelectorAll1);
+    botonesCarritos.forEach((botonCarrito) => {
+        botonCarrito.addEventListener("click", function () {
+            const corazonIcon = botonCarrito.querySelector(querySelectorAll2);
+            corazonIcon.classList.toggle(toggle1);
+            botonCarrito.classList.toggle(toggle2);
+        });
+    });
+}

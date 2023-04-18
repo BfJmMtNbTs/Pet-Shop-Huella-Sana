@@ -4,6 +4,8 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
         const libreria = data;
         const farmacia = libreria.filter(e=> e.categoria == "farmacia")
         imprimirCards(farmacia);
+        botonDinamico(".card-button1",".corazon-default","corazon-rojo","borde-rojo");
+        botonDinamico(".card-button3",".carrito-default","carrito-verde","borde-verde");
     })
     .catch((error) => {
         console.error(error);
@@ -53,4 +55,15 @@ function imprimirCards(productos) {
         `;
     });
     contenedor.innerHTML = cardsHTML.join("");
+}
+
+function botonDinamico(querySelectorAll1, querySelectorAll2, toggle1, toggle2) {
+    const botonesCarritos = document.querySelectorAll(querySelectorAll1);
+    botonesCarritos.forEach((botonCarrito) => {
+        botonCarrito.addEventListener("click", function () {
+            const corazonIcon = botonCarrito.querySelector(querySelectorAll2);
+            corazonIcon.classList.toggle(toggle1);
+            botonCarrito.classList.toggle(toggle2);
+        });
+    });
 }
