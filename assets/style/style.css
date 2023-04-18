@@ -27,11 +27,20 @@ body {
   background-color: #38271a;
   box-shadow: #a7d723 0px 5px 0px;
   min-height: 5rem;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-bottom: solid 3px #a7d723;
 }
 #logopatitanav {
-  height: 4rem;
+  height: 3rem;
+  margin-bottom: 0.8rem;
+}
+.contenedor-anchors a {
+  margin: 5px;
+  color: #a7d723;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: normal;
 }
 .buscador {
   background-color: #a7d723;
@@ -41,41 +50,39 @@ body {
   font-style: italic;
   height: 2.3rem;
 }
-
 .boton-carrito {
-    background-color: #ededed;
-    display: flex;
-    justify-content: center;
-    height: 2rem;
-    width: 3rem;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: 0.1s ease-in-out;
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  height: 2.3rem;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.1s ease-in-out;
 }
-
 .boton-carrito svg {
-    fill: #a7d723;
+  fill: #a7d723;
 }
-
 .boton-favoritos {
-    background-color: #ededed;
-    display: flex;
-    justify-content: center;
-    height: 2rem;
-    width: 3rem;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: 0.1s ease-in-out;
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.1s ease-in-out;
 }
 
 .boton-favoritos svg {
-    fill: red;
+  fill: red;
 }
 
 /* Main */
 main {
   background-color: #e5e5e5;
   min-height: 60vh;
+  margin-bottom: 4rem;
 }
 /* Footer */
 footer a {
@@ -94,7 +101,7 @@ footer {
   margin-top: auto;
   padding-top: 50px;
   box-shadow: #a7d723 100px -120px 0px -100px, #1397cf 0px -120px 0px -100px,
-  #38271a -100px -120px 0px -100px;
+    #38271a -100px -120px 0px -100px;
 }
 footer a {
   text-decoration: none;
