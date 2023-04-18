@@ -112,11 +112,6 @@ function aplicarFiltros() {
     imprimirCards(resultados, "contenedor-tarjetas");
 }
 
-
-
-
-
-
 inlineCheckbox1.addEventListener("change", ()=>{
         const categoriaFiltrados = filtroFarmacia.filter(e => e.categoria == "farmacia")
         if (inlineCheckbox1.checked){
@@ -126,71 +121,4 @@ inlineCheckbox1.addEventListener("change", ()=>{
         }
         
 })
-/* inlineCheckbox2.addEventListener("change", ()=>{
-const categoriaFiltrados = filtroFarmacia.filter(e => e.categoria == "jugueteria")
-if(inlineCheckbox2.checked){
-imprimirCards(categoriaFiltrados, "contenedor-tarjetas")
-}else {
-imprimirCards(filtroFarmacia, "contenedor-tarjetas")
-}
-})
-    
-    
-select.addEventListener('change', function() {
-const selectedValue = this.value;
-const ordenAlfabetico = [...filtroFarmacia].sort(function(a,b){
-        if(a.producto < b.producto){
-            return -1
-        }
-        if(a.producto > b.producto){
-            return 1
-        }
-        return 0
-      
-})
-const precioMasAlto = [...filtroFarmacia].sort(function(a, b) {
-        if(a.precio > b.precio){
-            return -1
-        }
-        if(a.precio < b.precio){
-            return 1
-        }
-        return 0
-})
-const precioMasBajo = [...filtroFarmacia].sort(function(a, b) {
-        if(a.precio < b.precio){
-            return -1
-        }
-        if(a.precio > b.precio){
-            return 1
-        }
-        return 0
-})
-if(selectedValue == 1){
-imprimirCards(precioMasAlto,"contenedor-tarjetas" )
- }
-if (selectedValue == 2){
-imprimirCards(precioMasBajo,"contenedor-tarjetas" )
-}if (selectedValue == 3){
-imprimirCards(ordenAlfabetico,"contenedor-tarjetas" )
-}else if (selectedValue == 4){
-imprimirCards(filtroFarmacia,"contenedor-tarjetas" )
-}
-}); 
-
-
-buscador.addEventListener('input',()=>{
-    const aca = busQueda(filtroFarmacia, buscador.value)
-    imprimirCards(aca, "contenedor-tarjetas" )
- }
- )
-
- function busQueda(array, texto) { 
-    let busqueda = array
-    if (texto) {
-    const textoMiniscula = texto.toLowerCase();
-    busqueda = array.filter((evento) => evento.producto.toLowerCase().includes(textoMiniscula) || evento.descripcion.toLowerCase().includes(textoMiniscula));
-    }
-    return busqueda
-} */
 
