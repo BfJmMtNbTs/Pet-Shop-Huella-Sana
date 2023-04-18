@@ -10,12 +10,9 @@
 }
 .flex-grow-1 {
   background-color: #e6e6e6;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-top: 4rem;
+  margin-top: 1rem;
   margin-bottom: 4rem;
-  border-radius: 15px;
-  box-shadow: #a7d723 0px 30px 0px 0px;
+  border-radius: 10px;
 }
 .video-contenedor {
   position: relative;
@@ -98,6 +95,8 @@ main {
 }
 
 .imagen-e2 {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   margin-top: 5rem;
   min-height: 40vh;
   background-color: #e2e2e2;
@@ -106,9 +105,10 @@ main {
   background-size: cover;
   background-position: bottom;
 }
-
 .imagen-e2::after {
   content: "";
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -132,14 +132,15 @@ main {
 
 .imagen-e3 {
   min-height: 50vh;
+  border-end-start-radius: 1rem;
   background-color: #e2e2e2;
   position: relative;
   background-image: url("../content/recurso3.jpg");
   background-size: cover;
   background-position: bottom;
 }
-
 .imagen-e3::after {
+  border-end-start-radius: 1rem;
   content: "";
   position: absolute;
   top: 0;
@@ -150,6 +151,7 @@ main {
   filter: brightness(60%);
 }
 .imagen-e4 {
+  border-end-end-radius: 1rem;
   min-height: 50vh;
   background-color: #e2e2e2;
   position: relative;
@@ -199,6 +201,7 @@ main {
 
 .imagen-e4::after {
   content: "";
+  border-end-end-radius: 1rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -207,7 +210,6 @@ main {
   background-color: #12b3f88f;
   filter: brightness(50%);
 }
-
 .texto-e3 {
   color: rgb(255, 255, 255);
   font-weight: 750;
@@ -217,15 +219,18 @@ main {
 .veni-a-visi {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #38271a;
   font-weight: bold;
-  height: 20vh;
+  height: 15vh;
   border-radius: 1rem;
 }
 .mapa {
+  width: 100%;
   min-height: 43vh;
   background-color: #a7d723;
   margin-top: 4rem;
+  box-shadow: #38271a 0px -150px 0px, #a7d723 0px 120px 0px;
 }
 iframe {
   height: 20rem;
@@ -233,15 +238,17 @@ iframe {
 
 /* desde 320px ----------- */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .flex-grow-1 {
-    margin: 1rem;
+  .carousel-inner {
+    border-top: solid #a7d723 7px;
+    border-bottom: solid #a7d723 7px;
+    box-shadow: #1397cf 100px 15px 0px, #a7d723 30px 15px 0px,
+      #1397cf 0px 15px 0px;
   }
   .flex-grow-1 {
     margin: 0;
     border-radius: 0;
     box-shadow: #a7d723 0px 30px 0px 0px, #38271a 0px -30px 0px 0px;
   }
-
   .sectionInfo {
     width: 100%;
   }
@@ -249,6 +256,18 @@ iframe {
     color: #efefed;
     font-weight: 750;
     font-size: x-large;
+  }
+  .imagen-e3 {
+    border-radius: 0;
+  }
+  .imagen-e3::after {
+    border-radius: 0;
+  }
+  .imagen-e4 {
+    border-end-start-radius: 1rem;
+  }
+  .imagen-e4::after {
+    border-end-start-radius: 1rem;
   }
   .texto1-index {
     color: #a7d723;

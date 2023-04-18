@@ -93,6 +93,8 @@ footer {
   color: white;
   margin-top: auto;
   padding-top: 50px;
+  box-shadow: #a7d723 100px -120px 0px -100px, #1397cf 0px -120px 0px -100px,
+  #38271a -100px -120px 0px -100px;
 }
 footer a {
   text-decoration: none;
