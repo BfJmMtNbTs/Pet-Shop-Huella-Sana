@@ -59,6 +59,32 @@
   border: 3px solid red;
 }
 
+.corazon-default {
+  fill: currentColor;
+  transition: 0.1s ease-in-out;
+}
+
+.corazon-rojo {
+  fill: red;
+}
+
+.borde-rojo {
+  border: 3px solid red;
+}
+
+.carrito-default {
+  fill: currentColor;
+  transition: 0.1s ease-in-out;
+}
+
+.carrito-verde {
+  fill: #a7d723;
+}
+
+.borde-verde {
+  border: 3px solid #a7d723;
+}
+
 .card-button2 {
   background-color: #ededed;
   display: flex;
