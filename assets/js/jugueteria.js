@@ -1,10 +1,9 @@
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-        imprimirCards(data);
-        botonDinamico(".card-button1",".corazon-default","corazon-rojo","borde-rojo")
-        botonDinamico(".card-button3",".carrito-default","carrito-verde","borde-verde")
+        const libreria = data;
+        const jugueteria = libreria.filter(e=> e.categoria == "jugueteria")
+        imprimirCards(jugueteria)
     })
     .catch((error) => {
         console.error(error);
@@ -12,7 +11,7 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
 
 function imprimirCards(productos) {
     const contenedor = document.getElementById("contenedor-tarjetas");
-    const producto = productos.map((producto) => {
+    const cardsHTML = productos.map((producto) => {
         let productosDisponibles;
         if (producto.disponibles < 5) {
             productosDisponibles = "Pocas unidades";
@@ -53,16 +52,5 @@ function imprimirCards(productos) {
             </div>
         `;
     });
-    contenedor.innerHTML = producto.join("");
-}
-
-function botonDinamico(querySelectorAll1, querySelectorAll2, toggle1, toggle2) {
-    const botonesCarritos = document.querySelectorAll(querySelectorAll1);
-    botonesCarritos.forEach((botonCarrito) => {
-        botonCarrito.addEventListener("click", function () {
-            const corazonIcon = botonCarrito.querySelector(querySelectorAll2);
-            corazonIcon.classList.toggle(toggle1);
-            botonCarrito.classList.toggle(toggle2);
-        });
-    });
+    contenedor.innerHTML = cardsHTML.join("");
 }
