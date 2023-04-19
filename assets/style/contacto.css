@@ -1,99 +1,105 @@
-body{
-    background-color: #efefed;
+body {
+  background-color: #efefed;
 }
 
 .contact-form {
-    background-color: #efefed;
-    padding: 20px;
-    border-radius: 10px;
+  background-color: #efefed;
+  padding: 20px;
+  margin-top: 3rem;
+  border-radius: 10px;
+  margin-bottom: 3rem;
 }
 
 .contact-form label {
-    color: black;
+  color: #38271a;
 }
 
 .contact-form .heading {
-    font-size: 24px;
-    color: black;
-    margin-bottom: 12px;
-    font-weight: bold;
-    display: block;
+  font-size: 24px;
+  color: #38271a;
+  margin-bottom: 12px;
+  font-weight: bold;
+  display: block;
 }
 
 .contact-form form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form label {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 textarea {
-    resize: none;
-    height: 45px;
+  resize: none;
+  height: 45px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: none;
-    box-shadow: 0 0 5px #ff6384;
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+  outline: none;
+  box-shadow: 0 0 10px #a7d723;
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
-#liveAlertBtn1, #liveAlertBtn2 {
-    background-color: #ff6384;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+#liveAlertBtn1,
+#liveAlertBtn2 {
+  background-color: #a7d723;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-#liveAlertBtn1:hover, #liveAlertBtn2:hover {
-    transform: scale(1.04);
-    transition: transform 0.3s ease-in-out;
+#liveAlertBtn1:hover,
+#liveAlertBtn2:hover {
+  transform: scale(1.04);
+  transition: transform 0.3s ease-in-out;
 }
 
 .accordion-item {
-    background-color: #efefed;
+  background-color: #efefed;
 }
 
 #form-select {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
-#div-form{
-    background-color: #ffffffaf;
+#div-form {
+  background-color: #b7dbeb;
 }
 
-#body-cont{
-    background-image: url(../content/fondoContacto.jpg);
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#body-cont {
+  background-image: url(../content/fondoContacto.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .inputContacto::placeholder {
-    color: #ff6384;
+  color: #ff6384;
 }
-.spanContacto{
-    color: #ff6384
+.spanContacto {
+  color: #ff6384;
 }
-.pContacto{
-    margin-top: 1rem;
+.pContacto {
+  margin-top: 1rem;
 }
-#spanTitulo{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 35px;
+#spanTitulo {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 35px;
 }
