@@ -4,18 +4,20 @@ const inlineCheckbox2 = document.getElementById("inlineCheckbox2");
 const buscador = document.getElementById("buscador");
 const btnAñadirCarrito = document.getElementById("contenedor-tarjetas");
 const btnCarrito = document.getElementById("btnCarrito");
-const contenedorCarritoCompra = document.getElementById("contenedor-carrito-compra");
-const borrarCarrito = document.getElementById('borrarCarrito')
-const totalContainer = document.getElementById("precioTotal")
-
-const comprasRealizadas = []
-let filtroFarmacia;
+const contenedorCarritoCompra = document.getElementById(
+    "contenedor-carrito-compra"
+);
+const borrarCarrito = document.getElementById("borrarCarrito");
+const totalContainer = document.getElementById("precioTotal");
+const botonPagar = document.getElementById("pagar");
+const comprasRealizadas = [];
+let filtroProductos;
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
     .then((data) => {
         let libreria = data;
-        filtroFarmacia = libreria.filter((elemento) => elemento);
-        console.log(filtroFarmacia);
+        filtroProductos = libreria.filter((elemento) => elemento);
+        console.log(filtroProductos);
         imprimirCards(libreria, "contenedor-tarjetas");
         botonDinamico(
             ".card-button1",
@@ -46,38 +48,61 @@ function imprimirCards(productos, elemento) {
             productosDisponibles = producto.disponibles;
         }
         document.getElementById(elemento).innerHTML += `
-            <div class="producto">
-                <div class="imagen-tarjeta d-flex justify-content-center">
-                <img class="objet-fit-contain" src="${producto.imagen}" alt="">
-                </div>
-                <div class="h-50 d-flex flex-column justify-content-between p-1">
-                    <p class="d-flex align-items-center texto1-producto">${producto.producto}</p>
-                    <div class="d-flex flex-column">
-                        <p class="texto2-producto m-0">$${producto.precio}</p>
-                        <div>
-                            <p class="texto3-producto m-0">Disponibles:</p>
-                            <p class="texto3-producto m-0">${productosDisponibles}</p>
-                        </div>
+                <div class="producto">
+                    <div class="imagen-tarjeta d-flex justify-content-center">
+                    <img class="objet-fit-contain" src="${producto.imagen}" alt="">
                     </div>
-                    <div class="d-flex my-2 justify-content-between">
-                        <div class="card-button1 d-flex justify-content-center align-items-center fw-bold" title="Añadir a favoritos">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill corazon-default" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-                            </svg>
+                    <div class="h-50 d-flex flex-column justify-content-between p-1">
+                        <p class="d-flex align-items-center texto1-producto">${producto.producto}</p>
+                        <div class="d-flex flex-column">
+                            <p class="texto2-producto m-0">$${producto.precio}</p>
+                            <div>
+                                <p class="texto3-producto m-0">Disponibles:</p>
+                                <p class="texto3-producto m-0">${productosDisponibles}</p>
+                            </div>
                         </div>
-                        <a href="../pages/detalles.html?id=${producto._id}" class="card-button2 d-flex justify-content-center align-items-center
-                        d-flex justify-content-center align-items-center text-decoration-none fw-bold text-black" title="Ver más detalles">VER</a>
-                        <div class="card-button3 d-flex justify-content-center align-items-center fw-bold" title="Añadir al carrito">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill carrito-default" viewBox="0 0 16 16">
-                                <path data-name="${producto.producto}" data-id="${producto._id}" d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
-                            </svg>
-                        </div>                            
-                    </div>
-                </div>
-            </div>
-            `;
+                        <div class="d-flex justify-content-around">
+                            <div class="card-button1 d-flex justify-content-center align-items-center fw-bold" title="Añadir a favoritos">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill corazon-default" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                                </svg>
+                            </div>
+                            <a href="../pages/detalles.html?id=${producto._id}" class="card-button2 d-flex justify-content-center align-items-center
+                            d-flex justify-content-center align-items-center text-decoration-none fw-bold text-black" title="Ver más detalles">VER</a>
+                            <div class="card-button3 d-flex justify-content-center align-items-center fw-bold" title="Añadir al carrito">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill carrito-default" viewBox="0 0 16 16">
+                                    <path data-name="${producto.producto}" data-id="${producto._id}" d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
+                                </svg>
+                            </div> 
+                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="toastProductoAñadido" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        Agregaste un producto al carrito 
+                                    </div>
+                                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                            </div>
+                            </div>`;
+        const toastTrigger = document.getElementById("liveToastBtn");
+        const toastLiveExample = document.getElementById("liveToast");
+
+        if (toastTrigger) {
+            const toastBootstrap =
+                bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+            toastTrigger.addEventListener("click", () => {
+                toastBootstrap.show();
+            });
+        }
     });
 }
+const mostrarToast = () => {
+    const toast = new bootstrap.Toast(
+        document.getElementById("toastProductoAñadido")
+    );
+    toast.show();
+};
 inlineCheckbox1.addEventListener("change", () => {
     aplicarFiltros();
 });
@@ -95,7 +120,7 @@ buscador.addEventListener("input", () => {
 });
 
 function aplicarFiltros() {
-    let resultados = [...filtroFarmacia];
+    let resultados = [...filtroProductos];
 
     if (inlineCheckbox1.checked) {
         resultados = resultados.filter((e) => e.categoria == "farmacia");
@@ -131,13 +156,13 @@ function aplicarFiltros() {
 }
 
 inlineCheckbox1.addEventListener("change", () => {
-    const categoriaFiltrados = filtroFarmacia.filter(
+    const categoriaFiltrados = filtroProductos.filter(
         (e) => e.categoria == "farmacia"
     );
     if (inlineCheckbox1.checked) {
         imprimirCards(categoriaFiltrados, "contenedor-tarjetas");
     } else {
-        imprimirCards(filtroFarmacia, "contenedor-tarjetas");
+        imprimirCards(filtroProductos, "contenedor-tarjetas");
     }
 });
 
@@ -166,67 +191,65 @@ const guardarCarritoEnLocalStorage = () => {
     localStorage.setItem("carrito", JSON.stringify(comprasRealizadas));
 };
 
+const renderizarCarrito = () => {
+    const comprasRealizadasContainer = document.getElementById(
+        "contenedor-carrito-compra"
+    );
+    comprasRealizadasContainer.innerHTML = comprasRealizadas
+        .filter((producto) => producto.precio !== undefined)
+        .map((producto) => {
+            return `<div class="producto2">
+                        <div class="imagen-tarjeta2 d-flex justify-content-center">
+                        <img class="objet-fit-contain" src="${producto.imagen}" alt="">
+                        </div>
+                        <div class="h-50 d-flex flex-column justify-content-between p-1 text-center">
+                            <p class="texto100-producto">${producto.producto}</p>
+                            <div class="d-flex flex-column">
+                            <p class="texto2-producto m-0">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
+                            <p class="texto2-producto m-0">Precio unitario: $${producto.precio}</p>
+                                <p class="texto2-producto m-0">Precio Total: $<span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
+                                </div>
+                            <button type="button" data-id="${producto._id}" class="btn btn-danger btn-borrar-producto fs-5">Borrar producto</button>
+                        </div>
+                    </div>`;
+        })
 
-const cantidadProductos = document.querySelectorAll(".cantidad-producto");
-    cantidadProductos.forEach(input => {
-        input.addEventListener("input", e => {
+        .join("");
+    const totalContainer = document.getElementById("precioTotal");
+    const total = comprasRealizadas.reduce((acc, producto) => {
+        if (producto.precio !== undefined) {
+            return acc + producto.precioTotal;
+        } else {
+            return acc;
+        }
+    }, 0);
+
+    totalContainer.innerHTML = `Total a pagar: $${total}`;
+
+    const cantidadProductos = document.querySelectorAll(".cantidad-producto");
+    cantidadProductos.forEach((input) => {
+        input.addEventListener("input", (e) => {
             const id = e.target.dataset.id;
             const cantidad = parseInt(e.target.value);
-            const producto = comprasRealizadas.find(p => p._id == id);
+            const producto = comprasRealizadas.find((p) => p._id == id);
             producto.cantidad = cantidad;
             producto.precioTotal = producto.precio * cantidad;
-            const precioTotalElement = document.querySelector(`.precio-total-${id}`);
+            const precioTotalElement = document.querySelector(
+                `.precio-total-${id}`
+            );
             precioTotalElement.textContent = producto.precioTotal;
             guardarCarritoEnLocalStorage();
+            renderizarCarrito();
         });
     });
 
-const renderizarCarrito = () => {
-    const comprasRealizadasContainer = document.getElementById("contenedor-carrito-compra");
-    comprasRealizadasContainer.innerHTML = comprasRealizadas
-        .filter(producto => producto.precio !== undefined)
-        .map(producto => {
-            return `<div class="d-flex flex-column">
-            <div class="imagen-tarjeta d-flex justify-content-center">
-            <img class="objet-fit-contain" src="${producto.imagen}" alt="">
-            </div>
-            <div class="d-flex flex-column justify-content-between p-1"> 
-            <p class="text-center texto1-producto">${producto.producto}</p>
-            <p class="text-black fs-5">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
-            <p class="text-black text-center fs-5">Precio Total: $<span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
-            <button type="button" data-id="${producto._id}" class="btn btn-success btn-borrar-producto fs-5">Borrar</button>
-        </div>`;
-        
-        })
-       /*  <div class="producto">
-      <div class="imagen-tarjeta d-flex justify-content-center">
-        <img class="objet-fit-contain" src="${producto.imagen}" alt="">
-      </div>
-      <div class="h-50 d-flex flex-column justify-content-between p-1">
-        <p class="d-flex align-items-center texto1-producto">${producto.producto}</p>
-        <div class="d-flex flex-column">
-          <p class="texto2-producto m-0">Cantidad: ${producto.cantidad} - $${producto.precio}</p>
-        </div>
-      </div>
-    </div> */
-        .join("");
-        const totalContainer = document.getElementById("precioTotal");
-        const total = comprasRealizadas.reduce((acc, producto) => {
-          if (producto.precio !== undefined) {
-            return acc + producto.precioTotal;
-          } else {
-            return acc;
-          }
-        }, 0);
-        
-        totalContainer.innerHTML = `Total a pagar: $${total}`;
-
-
-    const btnsBorrarProducto = document.querySelectorAll(".btn-borrar-producto");
-    btnsBorrarProducto.forEach(btn => {
-        btn.addEventListener("click", e => {
+    const btnsBorrarProducto = document.querySelectorAll(
+        ".btn-borrar-producto"
+    );
+    btnsBorrarProducto.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
             const id = e.target.dataset.id;
-            const index = comprasRealizadas.findIndex(p => p._id == id);
+            const index = comprasRealizadas.findIndex((p) => p._id == id);
             if (index !== -1) {
                 comprasRealizadas.splice(index, 1);
                 renderizarCarrito();
@@ -236,22 +259,23 @@ const renderizarCarrito = () => {
     });
 };
 
-const path = e => {
+const path = (e) => {
     const id = e.target.dataset.id;
-    console.log(id);
     if (id) {
-        const farmacia = filtroFarmacia.find(f => f._id == id);
-        const index = comprasRealizadas.findIndex(p => p._id == id);
+        const farmacia = filtroProductos.find((f) => f._id == id);
+        const index = comprasRealizadas.findIndex((p) => p._id == id);
         if (index !== -1) {
             comprasRealizadas[index].cantidad++;
-            comprasRealizadas[index].precioTotal = comprasRealizadas[index].cantidad * farmacia.precio;
+            comprasRealizadas[index].precioTotal =
+                comprasRealizadas[index].cantidad * farmacia.precio;
         } else {
             comprasRealizadas.push({
                 ...farmacia,
                 cantidad: 1,
-                precioTotal: farmacia.precio
+                precioTotal: farmacia.precio,
             });
         }
+
         renderizarCarrito();
         guardarCarritoEnLocalStorage();
     }
@@ -262,9 +286,19 @@ btnAñadirCarrito.addEventListener("click", path);
 window.addEventListener("load", cargarCarritoDesdeLocalStorage);
 
 //BORRAR LOCALSTORE CARRITO//
-borrarCarrito.addEventListener('click',()=>{
-    localStorage.removeItem("carrito");
-    totalContainer.innerHTML = `No tienes nada en el carrito`
-    contenedorCarritoCompra.innerHTML = "";
-  });
-console.log(localStorage)
+borrarCarrito.addEventListener("click", () => {
+    localStorage.clear();
+    totalContainer.innerHTML = `No tienes nada en el carrito`;
+    compras = [];
+    location.reload();
+});
+
+botonPagar.addEventListener("click", () => {
+    if (comprasRealizadas.textContent !== "") {
+        Swal.fire("Pago procesado!", "Gracias, vuelva pronto!", "success");
+        localStorage.removeItem("carrito");
+        totalContainer.innerHTML = `Carrito vacio`;
+        contenedorCarritoCompra.innerHTML = "";
+        return;
+    }
+});
