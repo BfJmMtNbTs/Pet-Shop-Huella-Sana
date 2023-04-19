@@ -2,7 +2,12 @@ const select = document.querySelector(".form-select");
 const inlineCheckbox1 = document.getElementById("inlineCheckbox1");
 const inlineCheckbox2 = document.getElementById("inlineCheckbox2");
 const buscador = document.getElementById("buscador");
-
+const btnAñadirCarrito = document.getElementById("contenedor-tarjetas");
+const btnCarrito = document.getElementById("btnCarrito");
+const contenedorCarritoCompra = document.getElementById(
+    "contenedor-carrito-compra"
+);
+let comprasRealizadas = [];
 let filtroFarmacia;
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
@@ -11,8 +16,19 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
         filtroFarmacia = libreria.filter((elemento) => elemento);
         console.log(filtroFarmacia);
         imprimirCards(libreria, "contenedor-tarjetas");
-        botonDinamico(".card-button1",".corazon-default","corazon-rojo","borde-rojo");
-        botonDinamico(".card-button3",".carrito-default","carrito-verde","borde-verde");
+        botonDinamico(
+            ".card-button1",
+            ".corazon-default",
+            "corazon-rojo",
+            "borde-rojo"
+        );
+        botonDinamico(
+            ".card-button3",
+            ".carrito-default",
+            "carrito-verde",
+            "borde-verde"
+        );
+        cardPantalla(comprasRealizadas, contenedorCarritoCompra);
     })
     .catch((error) => {
         console.error(error);
@@ -53,7 +69,7 @@ function imprimirCards(productos, elemento) {
                         d-flex justify-content-center align-items-center text-decoration-none fw-bold text-black" title="Ver más detalles">VER</a>
                         <div class="card-button3 d-flex justify-content-center align-items-center fw-bold" title="Añadir al carrito">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill carrito-default" viewBox="0 0 16 16">
-                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
+                                <path data-name="${producto.producto}" data-id="${producto._id}" d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
                             </svg>
                         </div>                            
                     </div>
@@ -135,3 +151,98 @@ function botonDinamico(querySelectorAll1, querySelectorAll2, toggle1, toggle2) {
         });
     });
 }
+
+/* Local Storage */
+const cargarCarritoDesdeLocalStorage = () => {
+    const carritoGuardado = localStorage.getItem("carrito");
+    if (carritoGuardado) {
+        const carritoParseado = JSON.parse(carritoGuardado);
+        comprasRealizadas.push(...carritoParseado);
+        renderizarCarrito();
+    }
+};
+
+const guardarCarritoEnLocalStorage = () => {
+    localStorage.setItem("carrito", JSON.stringify(comprasRealizadas));
+};
+
+const renderizarCarrito = () => {
+    const comprasRealizadasContainer = document.getElementById("contenedor-carrito-compra");
+    comprasRealizadasContainer.innerHTML = comprasRealizadas
+        .filter(producto => producto.precio !== undefined)
+        .map(producto => {
+            return `<div class="d-flex flex-column bg-black">
+            <img class="w-25" src="${producto.imagen}" alt="">
+            <p class="text-light">${producto.producto}</p>
+            <p class="text-light">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
+            <p class="text-light">Precio Total: <span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
+            <button data-id="${producto._id}" class="btn-borrar-producto">Borrar</button>
+        </div>`;
+        })
+        .join("");
+
+    const cantidadProductos = document.querySelectorAll(".cantidad-producto");
+    cantidadProductos.forEach(input => {
+        input.addEventListener("input", e => {
+            const id = e.target.dataset.id;
+            const cantidad = parseInt(e.target.value);
+            const producto = comprasRealizadas.find(p => p._id == id);
+            producto.cantidad = cantidad;
+            producto.precioTotal = producto.precio * cantidad;
+            const precioTotalElement = document.querySelector(`.precio-total-${id}`);
+            precioTotalElement.textContent = producto.precioTotal;
+            guardarCarritoEnLocalStorage();
+        });
+    });
+
+    const btnsBorrarProducto = document.querySelectorAll(".btn-borrar-producto");
+    btnsBorrarProducto.forEach(btn => {
+        btn.addEventListener("click", e => {
+            const id = e.target.dataset.id;
+            const index = comprasRealizadas.findIndex(p => p._id == id);
+            if (index !== -1) {
+                comprasRealizadas.splice(index, 1);
+                renderizarCarrito();
+                guardarCarritoEnLocalStorage();
+            }
+        });
+    });
+};
+
+const path = e => {
+    const id = e.target.dataset.id;
+    console.log(id);
+    if (id) {
+        const farmacia = filtroFarmacia.find(f => f._id == id);
+        const index = comprasRealizadas.findIndex(p => p._id == id);
+        if (index !== -1) {
+            comprasRealizadas[index].cantidad++;
+            comprasRealizadas[index].precioTotal = comprasRealizadas[index].cantidad * farmacia.precio;
+        } else {
+            comprasRealizadas.push({
+                ...farmacia,
+                cantidad: 1,
+                precioTotal: farmacia.precio
+            });
+        }
+        renderizarCarrito();
+        guardarCarritoEnLocalStorage();
+    }
+};
+
+btnAñadirCarrito.addEventListener("click", path);
+
+window.addEventListener("load", cargarCarritoDesdeLocalStorage);
+
+/* const contenedorBoton = document.getElementById("contenedor-tarjetas");
+const boton = (e) => {
+    if (
+        e.target.matches(".card-button3") ||
+        e.target.closest(".card-button3")
+    ) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+};
+contenedorBoton.addEventListener("click", boton); */
