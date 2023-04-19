@@ -50,6 +50,7 @@ nav {
 .contenedor-anchors a {
   color: #ededed;
   margin-right: 5px;
+  font-weight: 600;
 }
 .buscador {
   background-color: #a7d723;
@@ -59,16 +60,43 @@ nav {
   font-style: italic;
   height: 2.3rem;
 }
+.buscador:hover {
+  background-color: #a7d723;
+
+}
 .boton-carrito {
   background-color: #ededed;
   display: flex;
   justify-content: center;
-  height: 2rem;
+  height: 2.3rem;
   width: 3rem;
   cursor: pointer;
-  margin-left: .7rem;
+  margin-left: 0.7rem;
   border-radius: 12px;
   transition: 0.1s ease-in-out;
+}
+.productoEnElcarrito img {
+  border-radius: 8px;
+}
+.info-productodelcarrito {
+  padding: 15px;
+}
+.productoEnElcarrito {
+  width: 100%;
+  height: 17vh;
+  background-color: #a7d723;
+  color: #38271a !important;
+  border-radius: 8px;
+  padding: 3px;
+}
+.productoEnElcarrito p {
+  font-weight: 600;
+  font-size: small;
+  margin: 0;
+}
+.Precio{
+  border-top: solid #1397cf 3px;
+  font-size: 20px !important;
 }
 .boton-carrito svg {
   fill: #a7d723;
@@ -91,6 +119,22 @@ nav {
 main {
   background-color: #e5e5e5;
   min-height: 60vh;
+  margin-bottom: 4rem;
+}
+.toast {
+  color: white;
+  font-weight: bold;
+  background-color: #38271a;
+  z-index: 9999; /* Ajusta el valor del índice z según tus necesidades */
+}
+.form-select {
+  width: 19rem;
+  height: 2.6rem;
+  background-color: #a7d723;
+  margin-left: 2rem;
+}
+.form-check-input {
+  background-color: #a7d723;
 }
 /* Footer */
 footer a {
@@ -137,7 +181,7 @@ footer a {
   margin: 0px;
 }
 .medioslogos {
-  padding: .3rem;
+  padding: 0.3rem;
 }
 .elementosEnFooter {
   font-size: 0.8em;
@@ -185,5 +229,10 @@ footer a {
   }
   .imagenesFooter {
     margin: 2px;
+  }
+  .form-select {
+    width: 1rem;
+    height: 2.5rem;
+    margin: 0;
   }
 }
