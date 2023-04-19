@@ -1,76 +1,92 @@
-main{
-    background-image: url(../content/paws-5491105_1920.png);
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .list-group-item{
     margin: 10px;
     padding: 0;
 }
-.cuerpoCard{
-    min-height: 65vh;
+.card-text{
+    margin: 10px;
 }
-.img-fluid {
-    max-width: 70%;
-    max-height: 50vh;
-}
-/* .card-text{
-} */
 .card-title{
-    font-size: xx-large;
+    margin: 10px;
 }
 .card{
-    width: 75%;
-}
-.cuerpoCard{
-    background-color: #f4f1f1d1;
+    width: 60%;
 }
 span{
     color: rgb(48, 5, 163);
 }
-.botonesResponsive{
-    gap: 5px;
+main {
+  background-image: url(../content/paws-5491105_1920.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.list-group-item {
+  margin: 10px;
+  padding: 0;
+}
+.cuerpoCard {
+  min-height: 65vh;
+}
+.img-fluid {
+  max-width: 70%;
+  max-height: 50vh;
+}
+/* .card-text{
+} */
+.card-title {
+  font-size: xx-large;
+}
+.card {
+  width: 75%;
+}
+.cuerpoCard {
+  background-color: #f4f1f1d1;
+}
+span {
+  color: rgb(48, 5, 163);
+}
+.botonesResponsive {
+  gap: 5px;
 }
 
 @media only screen and (min-width: 767px) {
-    
-.botonesResponsive{
+  .botonesResponsive {
     gap: 5px;
+  }
 }
+
+@media only screen and (min-width: 320px) and (max-width: 461px) {
+  .bodyQ {
+    font-size: 10px;
+  }
+  .botonesResponsive {
+    gap: 5px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+  .btn {
+    font-size: 10px;
+  }
+  .btn2 {
+    min-width: 40%;
+    height: 30%;
+    margin: 3px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
 }
-    
-@media only screen and (min-width:320px) and (max-width: 461px) {
-    .bodyQ{
-        font-size: 10px;
-    }
-    .botonesResponsive{
-        gap: 5px;
-        flex-direction: column;
-        display: flex;
-        align-items: center;
-    }
-    .btn{
-        font-size: 10px;
-    }
-    .btn2{
-        min-width: 40%;
-        height: 30%;
-        margin: 3px;
-        flex-direction: column;
-        display: flex;
-        align-items: center; 
-    }
+@media only screen and (min-width: 462px) and (max-width: 569px) {
+  .botonesResponsive {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .btn {
+    font-size: 13px;
+  }
+  .btn2 {
+    min-width: 40%;
+  }
 }
-@media only screen and (min-width:462px) and (max-width: 569px) {
-    .botonesResponsive{
-        gap: 5px;
-        display: flex;
-        align-items: center;
-    }
-    .btn{
-        font-size: 13px;
-    }
-    .btn2{
-        min-width: 40%;
-}}

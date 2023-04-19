@@ -26,9 +26,8 @@
   filter: brightness(75%);
 }
 .carousel-inner {
-  border-top: solid #a7d723 7px;
   border-bottom: solid #a7d723 7px;
-  box-shadow: #a7d723 100px 15px 0px, #1397cf 30px 15px 0px,
+  box-shadow: #1397cf 100px 15px 0px, #a7d723 30px 15px 0px,
     #a7d723 0px 15px 0px;
 }
 .texto-contenedor {
@@ -40,12 +39,10 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .texto-presentacion {
   color: #efefed;
   font-weight: 750;
 }
-
 .tp1 {
   color: #a7d723;
 }
