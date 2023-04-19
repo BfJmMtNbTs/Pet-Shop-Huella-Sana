@@ -32,7 +32,7 @@ function escuchadorSubmitNo(boton){
         Swal.fire({
             icon: 'error',
             title: 'Ups...algo salio mal',
-            text: 'Completar casillas obligatorias'
+            text: '¿Completaste las casillas obligatorias?'
         })
     })
 }
@@ -40,7 +40,7 @@ function escuchadorSubmitNo(boton){
 boton1.addEventListener('click', () => {
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
-    const email = document.getElementById('email23').value;
+    const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;
     alertasContacto(nombre, apellido, email, telefono, boton1);
 })
