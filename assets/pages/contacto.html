@@ -47,7 +47,7 @@
     <main id="body-cont" class="d-flex justify-content-center align-items-center">
         <div class="container col-sm-6 col-md-6 col-lg-6 ">
             <div class="contact-form p-4 mb-5 mt-4" id="div-form">
-                <span class="heading text-center">¡Contactanos!</span>
+                <span class="heading text-center" id="spanTitulo">¡Contactanos!</span>
                 <div class="accordion" id="mi-acordeon">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="seccion1">
@@ -58,17 +58,20 @@
                         </h2>
                         <div id="form1" class="accordion-collapse collapse" aria-labelledby="seccion1"
                             data-bs-parent="#mi-acordeon">
+                            <div class="d-flex justify-content-end align-items-center px-4">
+                                <p class="pContacto text-body-secondary d-inline">Las casillas en <span class="spanContacto text-end"><strong>color</span></strong> son obligatorias</p>
+                            </div>
                             <div class="accordion-body">
                                 <form>
-                                    <label for="name">Nombre Propietario:</label>
-                                    <input type="text" placeholder="Nombre" required />
-                                    <label for="name">Apellido Propietario:</label>
-                                    <input type="text" placeholder="Apellido" />
-                                    <label for="name">Telefono:</label>
-                                    <input type="tel" placeholder="Numero de Telefono" />
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" placeholder="Correo electronico" />
-                                    <label for="message1">Comentario:</label>
+                                    <label for="name" class="fw-bold">Nombre Propietario:</label>
+                                    <input type="text" placeholder="Nombre" required id="nombre" class="inputContacto"/>
+                                    <label for="name" class="fw-bold">Apellido Propietario:</label>
+                                    <input type="text" placeholder="Apellido" required id="apellido" class="inputContacto"/>
+                                    <label for="name" class="fw-bold">Telefono:</label>
+                                    <input type="tel" placeholder="Numero de Telefono" required id="telefono" class="inputContacto"/>
+                                    <label for="email" class="fw-bold">Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="Correo electronico" required class="inputContacto"/>
+                                    <label for="message1" class="fw-bold">Comentario:</label>
                                     <textarea id="message1" name="messageP"
                                         placeholder="Agregar un comentario"></textarea>
                                     <div id="liveAlertPlaceholder1"></div>
@@ -89,22 +92,22 @@
                             data-bs-parent="#mi-acordeon">
                             <div class="accordion-body">
                                 <form>
-                                    <label for="name">Nombre Mascota:</label>
+                                    <label for="name" class="fw-bold">Nombre Mascota:</label>
                                     <input type="text" placeholder="Nombre" />
-                                    <label for="email">Edad Mascota:</label>
+                                    <label for="email" class="fw-bold">Edad Mascota:</label>
                                     <input type="email" id="email" name="email" placeholder="Edad" />
+                                    <label for="name" class="fw-bold">Raza:</label>
                                     <select class="form-select" aria-label="Default select example" id="form-select">
-                                        <option disabled selected>
-                                            Tipo de animal
+                                        <option disabled selected  class="fw-bold">
+                                            Especie animal
                                         </option>
                                         <option value="1">Perro</option>
                                         <option value="2">Gato</option>
                                         <option value="3">Exotico</option>
                                         <option value="4">Otro</option>
                                     </select>
-                                    <label for="name">Raza:</label>
                                     <input type="text" placeholder="Nombre de la raza" />
-                                    <label for="message2">Comentario:</label>
+                                    <label for="message2" class="fw-bold">Comentario:</label>
                                     <textarea id="message2" name="messageM"
                                         placeholder="Agregue un comentario"></textarea>
                                     <div id="liveAlertPlaceholder2"></div>
