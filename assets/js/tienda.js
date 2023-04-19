@@ -198,16 +198,20 @@ const renderizarCarrito = () => {
     comprasRealizadasContainer.innerHTML = comprasRealizadas
         .filter((producto) => producto.precio !== undefined)
         .map((producto) => {
-            return `<div class="d-flex flex-column">
-            <div class="imagen-tarjeta d-flex justify-content-center">
-            <img class="objet-fit-contain" src="${producto.imagen}" alt="">
-            </div>
-            <div class="d-flex flex-column justify-content-between p-1"> 
-            <p class="text-center texto1-producto">${producto.producto}</p>
-            <p class="text-black fs-5">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
-            <p class="text-black text-center fs-5">Precio Total: $<span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
-            <button type="button" data-id="${producto._id}" class="btn btn-success btn-borrar-producto fs-5">Borrar</button>
-        </div>`;
+            return `<div class="producto2">
+                        <div class="imagen-tarjeta2 d-flex justify-content-center">
+                        <img class="objet-fit-contain" src="${producto.imagen}" alt="">
+                        </div>
+                        <div class="h-50 d-flex flex-column justify-content-between p-1 text-center">
+                            <p class="texto100-producto">${producto.producto}</p>
+                            <div class="d-flex flex-column">
+                            <p class="texto2-producto m-0">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
+                            <p class="texto2-producto m-0">Precio unitario: $${producto.precio}</p>
+                                <p class="texto2-producto m-0">Precio Total: $<span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
+                                </div>
+                            <button type="button" data-id="${producto._id}" class="btn btn-danger btn-borrar-producto fs-5">Borrar producto</button>
+                        </div>
+                    </div>`;
         })
 
         .join("");
