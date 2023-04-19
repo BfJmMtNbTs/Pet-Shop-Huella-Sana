@@ -21,10 +21,10 @@ function mostrarProducto(producto) {
     if (producto) {
         const cuota = producto.precio*0.10+producto.precio/3
         return `
-        <div class="card ">
+        <div class="card  border-4 rounded-4">
             <div class="row d-flex justify-content-center g-0 cuerpoCard">
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="${producto.imagen}" class="img-fluid rounded-start"
+                    <img src="${producto.imagen}" class="img-fluid rounded-start rounded-4"
                         alt="...">
                 </div>
                 <div class="col-md-5 d-flex flex-column justify-content-evenly align-items-center bodyQ">
@@ -32,8 +32,8 @@ function mostrarProducto(producto) {
                         <h5 class="card-title">${producto.producto}</h5>
                         <p class="card-text">${producto.descripcion}</p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group fs-2">$${producto.precio}</li>
-                            <li class="list-group-item"><span class="d-flex align-items-center"><svg
+                            <li class="list-group fs-2 ">$${producto.precio}</li>
+                            <li class="list-group-item"><span class="d-flex align-items-center rounded-4"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="m-1 bi bi-credit-card-fill" viewBox="0 0 16 16">
                                     <path
@@ -43,17 +43,17 @@ function mostrarProducto(producto) {
                         </ul>
                     </div>
                 <div class="d-flex justify-content-center w-100">
-                    <a href="#" class="btn my-2 btn-dark">Agregar al carrito</a>
+                    <a href="#" class="btn mb-2 btn-dark">Agregar al carrito</a>
                 </div>
                 <div class=" d-flex justify-content-center botonesResponsive w-100 flex-wrap">
-                    <button type="button" class="btn  btn-dark d-flex align-items-center ">
+                    <button type="button" class="btn mb-2 btn-dark d-flex align-items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-geo-alt-fill m-1" viewBox="0 0 16 16">
                             <path
                             d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                             </svg>Sucursal uno
                     </button>
-                    <button type="button" class="btn btn-dark d-flex align-items-center">
+                    <button type="button" class="btn mb-2 btn-dark d-flex align-items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-geo-alt-fill m-1" viewBox="0 0 16 16">
                             <path
