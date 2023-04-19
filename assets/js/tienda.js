@@ -4,10 +4,11 @@ const inlineCheckbox2 = document.getElementById("inlineCheckbox2");
 const buscador = document.getElementById("buscador");
 const btnAñadirCarrito = document.getElementById("contenedor-tarjetas");
 const btnCarrito = document.getElementById("btnCarrito");
-const contenedorCarritoCompra = document.getElementById(
-    "contenedor-carrito-compra"
-);
-let comprasRealizadas = [];
+const contenedorCarritoCompra = document.getElementById("contenedor-carrito-compra");
+const borrarCarrito = document.getElementById('borrarCarrito')
+const totalContainer = document.getElementById("precioTotal")
+
+const comprasRealizadas = []
 let filtroFarmacia;
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
@@ -28,7 +29,6 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
             "carrito-verde",
             "borde-verde"
         );
-        cardPantalla(comprasRealizadas, contenedorCarritoCompra);
     })
     .catch((error) => {
         console.error(error);
@@ -166,22 +166,8 @@ const guardarCarritoEnLocalStorage = () => {
     localStorage.setItem("carrito", JSON.stringify(comprasRealizadas));
 };
 
-const renderizarCarrito = () => {
-    const comprasRealizadasContainer = document.getElementById("contenedor-carrito-compra");
-    comprasRealizadasContainer.innerHTML = comprasRealizadas
-        .filter(producto => producto.precio !== undefined)
-        .map(producto => {
-            return `<div class="d-flex flex-column bg-black">
-            <img class="w-25" src="${producto.imagen}" alt="">
-            <p class="text-light">${producto.producto}</p>
-            <p class="text-light">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
-            <p class="text-light">Precio Total: <span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
-            <button data-id="${producto._id}" class="btn-borrar-producto">Borrar</button>
-        </div>`;
-        })
-        .join("");
 
-    const cantidadProductos = document.querySelectorAll(".cantidad-producto");
+const cantidadProductos = document.querySelectorAll(".cantidad-producto");
     cantidadProductos.forEach(input => {
         input.addEventListener("input", e => {
             const id = e.target.dataset.id;
@@ -194,6 +180,47 @@ const renderizarCarrito = () => {
             guardarCarritoEnLocalStorage();
         });
     });
+
+const renderizarCarrito = () => {
+    const comprasRealizadasContainer = document.getElementById("contenedor-carrito-compra");
+    comprasRealizadasContainer.innerHTML = comprasRealizadas
+        .filter(producto => producto.precio !== undefined)
+        .map(producto => {
+            return `<div class="d-flex flex-column">
+            <div class="imagen-tarjeta d-flex justify-content-center">
+            <img class="objet-fit-contain" src="${producto.imagen}" alt="">
+            </div>
+            <div class="d-flex flex-column justify-content-between p-1"> 
+            <p class="text-center texto1-producto">${producto.producto}</p>
+            <p class="text-black fs-5">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
+            <p class="text-black text-center fs-5">Precio Total: $<span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
+            <button type="button" data-id="${producto._id}" class="btn btn-success btn-borrar-producto fs-5">Borrar</button>
+        </div>`;
+        
+        })
+       /*  <div class="producto">
+      <div class="imagen-tarjeta d-flex justify-content-center">
+        <img class="objet-fit-contain" src="${producto.imagen}" alt="">
+      </div>
+      <div class="h-50 d-flex flex-column justify-content-between p-1">
+        <p class="d-flex align-items-center texto1-producto">${producto.producto}</p>
+        <div class="d-flex flex-column">
+          <p class="texto2-producto m-0">Cantidad: ${producto.cantidad} - $${producto.precio}</p>
+        </div>
+      </div>
+    </div> */
+        .join("");
+        const totalContainer = document.getElementById("precioTotal");
+        const total = comprasRealizadas.reduce((acc, producto) => {
+          if (producto.precio !== undefined) {
+            return acc + producto.precioTotal;
+          } else {
+            return acc;
+          }
+        }, 0);
+        
+        totalContainer.innerHTML = `Total a pagar: $${total}`;
+
 
     const btnsBorrarProducto = document.querySelectorAll(".btn-borrar-producto");
     btnsBorrarProducto.forEach(btn => {
@@ -234,15 +261,10 @@ btnAñadirCarrito.addEventListener("click", path);
 
 window.addEventListener("load", cargarCarritoDesdeLocalStorage);
 
-/* const contenedorBoton = document.getElementById("contenedor-tarjetas");
-const boton = (e) => {
-    if (
-        e.target.matches(".card-button3") ||
-        e.target.closest(".card-button3")
-    ) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
-};
-contenedorBoton.addEventListener("click", boton); */
+//BORRAR LOCALSTORE CARRITO//
+borrarCarrito.addEventListener('click',()=>{
+    localStorage.removeItem("carrito");
+    totalContainer.innerHTML = `No tienes nada en el carrito`
+    contenedorCarritoCompra.innerHTML = "";
+  });
+console.log(localStorage)
