@@ -1,116 +1,154 @@
 .producto {
-  margin: 1rem;
-  width: 17rem;
-  padding: 0.8em;
-  background: #f5f5f5;
+  margin: 0.4rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  width: 16rem;
+  padding: 0.9em;
+  background: white;
   position: relative;
   overflow: visible;
 }
-
 .producto:hover {
-  cursor: pointer;
-  box-shadow: 0 15px 0px #38271a;
+  box-shadow: 0 15px 0px #a7d723;
 }
-
 .imagen-tarjeta img {
-  background-repeat: no-repeat;
-  background-position: center;
   width: 70%;
   height: 10.3rem;
   border-radius: 0.5rem;
-  transition: 0.3s ease;
 }
-
 .texto1-producto {
   min-height: 5rem;
-  border-radius: 0.5rem;
-  border-bottom: 3px solid #1397cf;
+  border-bottom: 3px solid #a7d723;
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5;
   color: #4b392b;
 }
-
 .texto2-producto {
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5;
   color: #4b392b;
 }
-
 .texto3-producto {
-  font-size: larger;
+  font-size: 15px;
+  text-align: end;
+  margin-bottom: 1px;
   font-weight: bolder;
-  color: #38271a80;
+  color: #38271a57;
 }
 
+/* Boton 1 - FAVORITOS ------------- */
 .card-button1 {
-  background-color: #ededed;
   display: flex;
   justify-content: center;
   height: 2rem;
   width: 3rem;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: 0.1s ease-in-out;
 }
-
 .card-button1:hover {
-  border: 3px solid red;
+  position: relative;
 }
-
+.card-button1:hover::before {
+  content: attr(title);
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+}
 .corazon-default {
   fill: currentColor;
   transition: 0.1s ease-in-out;
 }
-
 .corazon-rojo {
   fill: red;
 }
-
-.borde-rojo {
+/* .borde-rojo {
   border: 3px solid red;
-}
+} */
 
-.carrito-default {
-  fill: currentColor;
-  transition: 0.1s ease-in-out;
-}
-
-.carrito-verde {
-  fill: #a7d723;
-}
-
-.borde-verde {
-  border: 3px solid #a7d723;
-}
-
+/* Boton 2 - VER MAS ------------- */
 .card-button2 {
-  background-color: #ededed;
+  background-color: #1397cf;
   display: flex;
   justify-content: center;
   height: 2rem;
-  width: 3rem;
+  width: 5rem;
   cursor: pointer;
-  border-radius: 12px;
-  transition: 0.1s ease-in-out;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
 }
-
 .card-button2:hover {
   border: 3px solid #1397cf;
+  position: relative;
+}
+.card-button2:hover::before {
+  content: attr(title);
+  background-color: #1397cf;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
 }
 
+/* Boton 2 - CARRITO ------------- */
 .card-button3 {
-  background-color: #ededed;
+  background-color: #a7d723;
   display: flex;
   justify-content: center;
   height: 2rem;
   width: 3rem;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 8px;
   transition: 0.1s ease-in-out;
 }
-
 .card-button3:hover {
-  border: 3px solid #a7d723;
+  border: 3px solid #88af1c;
+  position: relative;
 }
+.card-button3:hover::before {
+  content: attr(title);
+  background-color: #a7d723;
+  color: #fff;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+}
+.carrito-default {
+  fill: white;
+  height: 18px;
+  width: 18px;
+  transition: 0.3s ease-in-out;
+}
+.carrito-default:hover {
+  fill: currentColor;
+  transition: 0.3s ease-in-out;
+}
+
+/* .borde-verde {
+  border: 3px solid #a7d723;
+} */
