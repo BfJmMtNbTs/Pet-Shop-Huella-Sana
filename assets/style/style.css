@@ -89,13 +89,13 @@ nav {
   border-radius: 8px;
   padding: 3px;
 }
-.productoEnElcarrito p {
+.productoEnElcarrito p{
   font-weight: 600;
-  font-size: small;
+  font-size: 8px;
   margin: 0;
 }
 .Precio{
-  border-top: solid #1397cf 3px;
+  border-top: solid red 3px;
   font-size: 20px !important;
 }
 .boton-carrito svg {
