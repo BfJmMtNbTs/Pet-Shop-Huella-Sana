@@ -1,5 +1,5 @@
 .producto {
-  margin: .3rem;
+  margin: 0.4rem;
   margin-top: 1rem;
   border-radius: 8px;
   width: 16rem;
@@ -8,18 +8,13 @@
   position: relative;
   overflow: visible;
 }
-
 .producto:hover {
   box-shadow: 0 15px 0px #a7d723;
 }
-
 .imagen-tarjeta img {
-  background-repeat: no-repeat;
-  background-position: center;
   width: 70%;
   height: 10.3rem;
   border-radius: 0.5rem;
-  transition: 0.3s ease;
 }
 .texto1-producto {
   min-height: 5rem;
@@ -54,7 +49,6 @@
   transition: 0.1s ease-in-out;
 }
 .card-button1:hover {
-  border: 3px solid red;
   position: relative;
 }
 .card-button1:hover::before {
@@ -87,7 +81,6 @@
 .card-button2 {
   background-color: #1397cf;
   display: flex;
-  color: white;
   justify-content: center;
   height: 2rem;
   width: 5rem;
@@ -127,7 +120,7 @@
   transition: 0.1s ease-in-out;
 }
 .card-button3:hover {
-  border: 3px solid #a7d723;
+  border: 3px solid #88af1c;
   position: relative;
 }
 .card-button3:hover::before {
@@ -146,12 +139,16 @@
   margin-bottom: 0.5rem;
 }
 .carrito-default {
+  fill: white;
+  height: 18px;
+  width: 18px;
+  transition: 0.3s ease-in-out;
+}
+.carrito-default:hover {
   fill: currentColor;
-  transition: 0.1s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.carrito-verde {
-  fill: #38271a;
-}
+
 /* .borde-verde {
   border: 3px solid #a7d723;
 } */
