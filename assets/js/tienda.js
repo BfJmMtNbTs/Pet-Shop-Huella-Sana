@@ -2,7 +2,13 @@ const select = document.querySelector(".form-select");
 const inlineCheckbox1 = document.getElementById("inlineCheckbox1");
 const inlineCheckbox2 = document.getElementById("inlineCheckbox2");
 const buscador = document.getElementById("buscador");
+const btnAñadirCarrito = document.getElementById("contenedor-tarjetas");
+const btnCarrito = document.getElementById("btnCarrito");
+const contenedorCarritoCompra = document.getElementById("contenedor-carrito-compra");
+const borrarCarrito = document.getElementById('borrarCarrito')
+const totalContainer = document.getElementById("precioTotal")
 
+const comprasRealizadas = []
 let filtroFarmacia;
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
@@ -11,8 +17,18 @@ fetch("https://mindhub-xj03.onrender.com/api/petshop")
         filtroFarmacia = libreria.filter((elemento) => elemento);
         console.log(filtroFarmacia);
         imprimirCards(libreria, "contenedor-tarjetas");
-        botonDinamico(".card-button1",".corazon-default","corazon-rojo","borde-rojo");
-        botonDinamico(".card-button3",".carrito-default","carrito-verde","borde-verde");
+        botonDinamico(
+            ".card-button1",
+            ".corazon-default",
+            "corazon-rojo",
+            "borde-rojo"
+        );
+        botonDinamico(
+            ".card-button3",
+            ".carrito-default",
+            "carrito-verde",
+            "borde-verde"
+        );
     })
     .catch((error) => {
         console.error(error);
@@ -53,7 +69,7 @@ function imprimirCards(productos, elemento) {
                         d-flex justify-content-center align-items-center text-decoration-none fw-bold text-black" title="Ver más detalles">VER</a>
                         <div class="card-button3 d-flex justify-content-center align-items-center fw-bold" title="Añadir al carrito">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill carrito-default" viewBox="0 0 16 16">
-                                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
+                                <path data-name="${producto.producto}" data-id="${producto._id}" d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
                             </svg>
                         </div>                            
                     </div>
@@ -135,3 +151,120 @@ function botonDinamico(querySelectorAll1, querySelectorAll2, toggle1, toggle2) {
         });
     });
 }
+
+/* Local Storage */
+const cargarCarritoDesdeLocalStorage = () => {
+    const carritoGuardado = localStorage.getItem("carrito");
+    if (carritoGuardado) {
+        const carritoParseado = JSON.parse(carritoGuardado);
+        comprasRealizadas.push(...carritoParseado);
+        renderizarCarrito();
+    }
+};
+
+const guardarCarritoEnLocalStorage = () => {
+    localStorage.setItem("carrito", JSON.stringify(comprasRealizadas));
+};
+
+
+const cantidadProductos = document.querySelectorAll(".cantidad-producto");
+    cantidadProductos.forEach(input => {
+        input.addEventListener("input", e => {
+            const id = e.target.dataset.id;
+            const cantidad = parseInt(e.target.value);
+            const producto = comprasRealizadas.find(p => p._id == id);
+            producto.cantidad = cantidad;
+            producto.precioTotal = producto.precio * cantidad;
+            const precioTotalElement = document.querySelector(`.precio-total-${id}`);
+            precioTotalElement.textContent = producto.precioTotal;
+            guardarCarritoEnLocalStorage();
+        });
+    });
+
+const renderizarCarrito = () => {
+    const comprasRealizadasContainer = document.getElementById("contenedor-carrito-compra");
+    comprasRealizadasContainer.innerHTML = comprasRealizadas
+        .filter(producto => producto.precio !== undefined)
+        .map(producto => {
+            return `<div class="d-flex flex-column">
+            <div class="imagen-tarjeta d-flex justify-content-center">
+            <img class="objet-fit-contain" src="${producto.imagen}" alt="">
+            </div>
+            <div class="d-flex flex-column justify-content-between p-1"> 
+            <p class="text-center texto1-producto">${producto.producto}</p>
+            <p class="text-black fs-5">Cantidad: <input type="number" min="1" value="${producto.cantidad}" data-id="${producto._id}" class="cantidad-producto"></p>
+            <p class="text-black text-center fs-5">Precio Total: $<span class="precio-total-${producto._id}">${producto.precioTotal}</span></p>
+            <button type="button" data-id="${producto._id}" class="btn btn-success btn-borrar-producto fs-5">Borrar</button>
+        </div>`;
+        
+        })
+       /*  <div class="producto">
+      <div class="imagen-tarjeta d-flex justify-content-center">
+        <img class="objet-fit-contain" src="${producto.imagen}" alt="">
+      </div>
+      <div class="h-50 d-flex flex-column justify-content-between p-1">
+        <p class="d-flex align-items-center texto1-producto">${producto.producto}</p>
+        <div class="d-flex flex-column">
+          <p class="texto2-producto m-0">Cantidad: ${producto.cantidad} - $${producto.precio}</p>
+        </div>
+      </div>
+    </div> */
+        .join("");
+        const totalContainer = document.getElementById("precioTotal");
+        const total = comprasRealizadas.reduce((acc, producto) => {
+          if (producto.precio !== undefined) {
+            return acc + producto.precioTotal;
+          } else {
+            return acc;
+          }
+        }, 0);
+        
+        totalContainer.innerHTML = `Total a pagar: $${total}`;
+
+
+    const btnsBorrarProducto = document.querySelectorAll(".btn-borrar-producto");
+    btnsBorrarProducto.forEach(btn => {
+        btn.addEventListener("click", e => {
+            const id = e.target.dataset.id;
+            const index = comprasRealizadas.findIndex(p => p._id == id);
+            if (index !== -1) {
+                comprasRealizadas.splice(index, 1);
+                renderizarCarrito();
+                guardarCarritoEnLocalStorage();
+            }
+        });
+    });
+};
+
+const path = e => {
+    const id = e.target.dataset.id;
+    console.log(id);
+    if (id) {
+        const farmacia = filtroFarmacia.find(f => f._id == id);
+        const index = comprasRealizadas.findIndex(p => p._id == id);
+        if (index !== -1) {
+            comprasRealizadas[index].cantidad++;
+            comprasRealizadas[index].precioTotal = comprasRealizadas[index].cantidad * farmacia.precio;
+        } else {
+            comprasRealizadas.push({
+                ...farmacia,
+                cantidad: 1,
+                precioTotal: farmacia.precio
+            });
+        }
+        renderizarCarrito();
+        guardarCarritoEnLocalStorage();
+    }
+};
+
+btnAñadirCarrito.addEventListener("click", path);
+
+window.addEventListener("load", cargarCarritoDesdeLocalStorage);
+
+//BORRAR LOCALSTORE CARRITO//
+borrarCarrito.addEventListener('click',()=>{
+    localStorage.removeItem("carrito");
+    totalContainer.innerHTML = `No tienes nada en el carrito`
+    contenedorCarritoCompra.innerHTML = "";
+  });
+console.log(localStorage)
