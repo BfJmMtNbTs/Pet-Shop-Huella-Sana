@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../style/tienda.css">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="shortcut icon" href="../content/favicon.png" type="image/x-icon" />
-    <title>Pet Shop | Tienda</title>
+    <title>Pet Shop | Jugueteria</title>
 </head>
 
 <body class="contenedorBody">
@@ -43,13 +43,13 @@
                         <a class="nav-link fs-5" aria-current="page" href="../../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="#">Tienda</a>
+                        <a class="nav-link fs-5" href="./tienda.html">Tienda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5" href="./farmacia.html">Farmacia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="./jugueteria.html">Jugueteria</a>
+                        <a class="nav-link fs-5" href="#">Jugueteria</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5" href="./contacto.html">Contacto</a>
@@ -58,25 +58,25 @@
             </div>
         </div>
     </nav>
+    <!-- <div>
+        <div class="boton-favoritos d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+        aria-controls="offcanvasWithBothOptions">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+        </svg>
+    </div>
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Lista de favoritos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>Lista de favoritos vacia</p>
+    </div>
+</div>
+</div> -->
     <div class="navbar navar d-flex">
-        <!-- <div>
-            <div class="boton-favoritos d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-            aria-controls="offcanvasWithBothOptions">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-            </svg>
-            </div>
-            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-                aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Lista de favoritos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <p>Lista de favoritos vacia</p>
-                </div>
-            </div>
-        </div> -->
         <div class="d-flex align-items-center justify-content-center col-12">
             <form class="d-flex col-9 col-sm-6 col-lg-4" role="search">
                 <input id="buscador" class="input buscador form-control focus-ring focus-ring-dark" type="search"
@@ -93,48 +93,20 @@
                         </path>
                     </svg>
                 </div>
-                <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-                    aria-labelledby="offcanvasWithBothOptionsLabel">
-                    <div class="offcanvas-header d-flex flex-colum">
-                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de compra</h5>
-                        <button id="borrarCarrito" type="button" class="btn btn-primary">Borrar items</button>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
-                    </div>
-                    <p id="precioTotal" class="m-3 fs-5">Total a pagar:</p>
-                    <div class="offcanvas-body" id="contenedor-carrito-compra">
-                        <!-- <div class="d-flex bg-black">
-                            <img class="w-25" src="https://i.postimg.cc/s2v7QdfZ/collar-perros.png" alt="">
-                            <p class="text-light">Nombre del producto</p>
-                        </div> -->
-
-                    </div>
+            </div>
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Agregue productos al carrito</p>
                 </div>
             </div>
         </div>
     </div>
     <main>
-        <div class="d-flex">
-            <div class="d-flex justify-content-start">
-                <select class="form-select text-center fs-5" aria-label=" Default select example"">
-                    <option selected>Filtrar</option>
-                    <option value=" 1">Precio de mayor a menor</option>
-                    <option value="2">Precio de menor a mayor</option>
-                    <option value="3">Orden alfabetico a Z</option>
-                    <option value="4">-- Borrar filtros-- </option>
-                </select>
-            </div>
-            <div class="m-2">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="farmacia">
-                    <label class="form-check-label fs-6" for="inlineCheckbox1">Farmacia</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="juguetes">
-                    <label class="form-check-label fs-6" for="inlineCheckbox2">Jugueteria</label>
-                </div>
-            </div>
-        </div>
         <div class="container d-flex justify-content-center">
             <div class="row my-3 gap d-flex justify-content-center" id="contenedor-tarjetas">
                 <!-- Aqui van los productos -->
@@ -189,7 +161,7 @@
                                 <path
                                     d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z" />
                             </svg>
-                            <a class="contactoLINK" href="mailto: huellafelices@gmail.com">huella_sanas@gmail.com</a>
+                            <a class="contactoLINK" href="mailto: huella_sanas@gmail.com">huella_sanas@gmail.com</a>
                         </li>
                         <li class="itemCONTACTO">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -198,9 +170,9 @@
                                     d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
                                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                             </svg>
-                            <a href="https://goo.gl/maps/mNQLQ9yE6j5ESrvx9" target="_blank">Paraguay 2334 5 F</a>
                             <a
                                 href="https://www.google.com/maps?ll=-24.237543,-65.260722&z=15&t=m&hl=es-419&gl=AR&mapclient=embed&cid=6319165887213111271">Mascotti</a>
+                            <a href="https://goo.gl/maps/mNQLQ9yE6j5ESrvx9" target="_blank">Paraguay 2334 5 F</a>
                         </li>
                     </ul>
                 </div>
@@ -257,6 +229,8 @@
                             dirigirse:
                             <a href="https://autogestion.produccion.gob.ar/consumidores" class="font-weight-bold">Click
                                 aqui</a>
+                            <a href="https://autogestion.produccion.gob.ar/consumidores" class="font-weight-bold">Click
+                                aqui</a>
                         </div>
                     </div>
                 </div>
@@ -267,7 +241,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <script src="../js/tienda.js"></script>
+    <script src="../js/jugueteria.js"></script>
 </body>
 
 </html>
