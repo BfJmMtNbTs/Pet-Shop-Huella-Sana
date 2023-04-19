@@ -21,8 +21,8 @@ function mostrarProducto(producto) {
     if (producto) {
         const cuota = producto.precio*0.10+producto.precio/3
         return `
-        <div class="card  border-4 rounded-4">
-            <div class="row d-flex justify-content-center g-0 cuerpoCard">
+        <div class="card my-4 border-4 rounded-4">
+            <div class="row d-flex justify-content-center g-0 cuerpoCard rounded-4">
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
                     <img src="${producto.imagen}" class="img-fluid rounded-start rounded-4"
                         alt="...">
@@ -33,7 +33,7 @@ function mostrarProducto(producto) {
                         <p class="card-text">${producto.descripcion}</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group fs-2 ">$${producto.precio}</li>
-                            <li class="list-group-item"><span class="d-flex align-items-center rounded-4"><svg
+                            <li class="list-group-item rounded-4"><span class="d-flex align-items-center"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="m-1 bi bi-credit-card-fill" viewBox="0 0 16 16">
                                     <path
