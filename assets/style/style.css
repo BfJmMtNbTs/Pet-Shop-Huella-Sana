@@ -49,8 +49,6 @@ nav {
 }
 .contenedor-anchors a {
   color: #ededed;
-  font-weight: bold;
-  font-size: large;
   margin-right: 5px;
 }
 .buscador {
@@ -101,9 +99,9 @@ footer a {
 }
 .imagenesFooter {
   background-color: #e5e5e5;
-  border-radius: 5px;
+  border-radius: 8px;
+  width: 3rem;
 }
-
 footer {
   background-color: #38271a;
   font-size: 16px;
@@ -118,7 +116,7 @@ footer a {
   text-decoration: none;
 }
 .footer-menu {
-  margin: 0 0 40px;
+  margin: 0 0 35px;
   padding: 0;
   list-style: none;
 }
@@ -139,19 +137,29 @@ footer a {
   max-height: 90px;
   margin: 0px;
 }
+.medioslogos {
+  padding: .3rem;
+}
 .elementosEnFooter {
   font-size: 0.8em;
+}
+.contenedor-medios {
+  margin-bottom: 2rem;
+}
+.footerSecundario {
+  border-start-start-radius: 1rem;
+  border-start-end-radius: 1rem;
 }
 .divisor {
   margin-top: 20px;
   clear: both;
-  border-bottom: 1px solid #a7d723;
+  border-bottom: 3px solid #a7d723;
 }
 @media only screen and (max-width: 767px) {
   .centerfooter {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
 }
 .footerSecundario {
@@ -159,10 +167,8 @@ footer a {
   color: #38271a;
   font-weight: bold;
 }
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   #logopatitanav {
-
     margin-bottom: 5px;
   }
   .contenedor-anchors a {
@@ -172,5 +178,13 @@ footer a {
     font-weight: bold;
     font-size: 3px;
   }
-
+  .medioslogos {
+    padding: 1rem;
+  }
+  .footer-menu {
+    margin: 0 0 25px;
+  }
+  .imagenesFooter {
+    margin: 2px;
+  }
 }
