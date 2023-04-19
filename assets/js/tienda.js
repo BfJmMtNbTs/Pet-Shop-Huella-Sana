@@ -11,13 +11,13 @@ const borrarCarrito = document.getElementById("borrarCarrito");
 const totalContainer = document.getElementById("precioTotal");
 const botonPagar = document.getElementById("pagar");
 const comprasRealizadas = [];
-let filtroFarmacia;
+let filtroProductos;
 fetch("https://mindhub-xj03.onrender.com/api/petshop")
     .then((response) => response.json())
     .then((data) => {
         let libreria = data;
-        filtroFarmacia = libreria.filter((elemento) => elemento);
-        console.log(filtroFarmacia);
+        filtroProductos = libreria.filter((elemento) => elemento);
+        console.log(filtroProductos);
         imprimirCards(libreria, "contenedor-tarjetas");
         botonDinamico(
             ".card-button1",
@@ -120,7 +120,7 @@ buscador.addEventListener("input", () => {
 });
 
 function aplicarFiltros() {
-    let resultados = [...filtroFarmacia];
+    let resultados = [...filtroProductos];
 
     if (inlineCheckbox1.checked) {
         resultados = resultados.filter((e) => e.categoria == "farmacia");
@@ -156,13 +156,13 @@ function aplicarFiltros() {
 }
 
 inlineCheckbox1.addEventListener("change", () => {
-    const categoriaFiltrados = filtroFarmacia.filter(
+    const categoriaFiltrados = filtroProductos.filter(
         (e) => e.categoria == "farmacia"
     );
     if (inlineCheckbox1.checked) {
         imprimirCards(categoriaFiltrados, "contenedor-tarjetas");
     } else {
-        imprimirCards(filtroFarmacia, "contenedor-tarjetas");
+        imprimirCards(filtroProductos, "contenedor-tarjetas");
     }
 });
 
@@ -258,7 +258,7 @@ const renderizarCarrito = () => {
 const path = (e) => {
     const id = e.target.dataset.id;
     if (id) {
-        const farmacia = filtroFarmacia.find((f) => f._id == id);
+        const farmacia = filtroProductos.find((f) => f._id == id);
         const index = comprasRealizadas.findIndex((p) => p._id == id);
         if (index !== -1) {
             comprasRealizadas[index].cantidad++;
