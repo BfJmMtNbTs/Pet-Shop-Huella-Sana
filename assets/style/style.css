@@ -127,7 +127,7 @@ main {
   background-color: #38271a;
   z-index: 9999; /* Ajusta el valor del índice z según tus necesidades */
 }
-.form-select {
+#selectFiltroJ, #selectFiltroT, #selectFiltroF {
   width: 19rem;
   height: 2.6rem;
   background-color: #a7d723;
