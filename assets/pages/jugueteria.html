@@ -42,13 +42,13 @@
                         <a class="nav-link" aria-current="page" href="../../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./tienda.html">Tienda</a>
+                        <a class="nav-link" href="#">Tienda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./farmacia.html">Farmacia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Jugueteria</a>
+                        <a class="nav-link" href="./jugueteria.html">Jugueteria</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contacto.html">Contacto</a>
@@ -57,6 +57,39 @@
             </div>
         </div>
     </nav>
+    <div class="navbar navar d-flex">
+        <div class="d-flex align-items-center justify-content-center col-12">
+            <form class="d-flex col-9 col-sm-6 col-lg-4" role="search">
+                <input id="buscador" class="input buscador form-control focus-ring focus-ring-dark" type="search"
+                    placeholder="¿Que andas buscando?" aria-label="Search">
+            </form>
+            <div>
+                <div class="boton-carrito d-flex justify-content-center align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"></path>
+                    </svg>
+                </div>
+                <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                    aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header d-flex flex-colum">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrito de compra</h5>
+                        <button id="borrarCarrito" type="button" class="btn btn-primary">Borrar items</button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        
+                    </div>
+                    <p id="precioTotal" class="m-3 fs-5">Total a pagar:</p>
+                    <div class="offcanvas-body" id="contenedor-carrito-compra">
+                        <!-- <div class="d-flex bg-black">
+                            <img class="w-25" src="https://i.postimg.cc/s2v7QdfZ/collar-perros.png" alt="">
+                            <p class="text-light">Nombre del producto</p>
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
         <div class="d-flex justify-content-end">
             <select class="form-select text-center fs-5 aria-label="Default select example">
